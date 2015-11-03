@@ -65,6 +65,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css选择器—伪类选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/03/css选择器—伪类选择器/" class="article-date">
+  <time datetime="2015-11-03T03:47:01.000Z" itemprop="datePublished">2015-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/03/css选择器—伪类选择器/">css选择器—伪类选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="伪类选择器">伪类选择器</h1><h2 id="一，动态伪类">一，动态伪类</h2><h3 id="动态伪类包含两种">动态伪类包含两种</h3><p>(只有当用户和网站交互的时候才能体现出来)</p>
+<ul>
+<li>在链接中常看到的锚点伪类 如：“:link,:visited”</li>
+<li>用户行为伪类 如：“:hover,:active,:focus”</li>
+</ul>
+<p><span style="color:red;">对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。</p>
+<p> </span></p>
+<h2 id="二，UI元素状态伪类">二，UI元素状态伪类</h2><p> :enabled,:disabled,:checked UI元素状态伪类<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="attr_selector">[type="text"]</span><span class="pseudo">:disabled</span> <span class="rules">&#123;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#999</span></span></span>;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#fefefe</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p> 禁用的文本框应用了一个不同的样式<br> <span style="color:red">IE6-8不支持”:checked”,”:enabled”,”:disabled”这三种选择器。</span></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/03/css选择器—伪类选择器/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cigj5hxuw0000pc9gir4ltwc5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-d" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/02/d/" class="article-date">
@@ -88,7 +137,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
-<h1 id="二，属性选择器">二，属性选择器</h1><p><span style="color:red">IE6不支持属性选择器</span></p>
+<h1 id="属性选择器">属性选择器</h1><p><span style="color:red">IE6不支持属性选择器</span></p>
 <h2 id="1，E【attr】">1，E【attr】</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>; &#125;</span></span><br><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="attr_selector">[title]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>; &#125;</span></span><br></pre></td></tr></table></figure>
 <p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素    </p>
         
@@ -99,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cigitm6um0000ff9gu3pv0j2f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cigj5hxvt0002pc9gk8lhxtmx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +181,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。<br>HTML页面中的元素就是通过CSS选择器进行控制的。</p>
-<h1 id="一，基本选择器">一，基本选择器</h1><h2 id="1,_通配符选择器（*）">1, 通配符选择器（*）</h2><p>通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.a</span> *<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="基本选择器">基本选择器</h1><h2 id="1,_通配符选择器（*）">1, 通配符选择器（*）</h2><p>通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.a</span> *<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="2,_元素选择器（E）">2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">15px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
@@ -142,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cighot31m0001qb9gsowcahy8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cigj5hxvl0001pc9gywyrtzx4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -177,6 +226,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/11/03/css选择器—伪类选择器/">css选择器—伪类选择器</a>
+          </li>
         
           <li>
             <a href="/2015/11/02/d/">css选择器—属性选择器</a>
