@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://img03.taobaocdn.com/tps/i3/T1vibEXcheXXbfe2f.-517-91.png">
 <meta property="og:image" content="http://img04.taobaocdn.com/tps/i4/T1AobxXlpsXXXtlu.6-451-223.png">
 <meta property="og:image" content="http://img01.taobaocdn.com/tps/i1/T1.EjEXalaXXXxnXr3-411-212.png">
-<meta property="og:updated_time" content="2015-11-10T09:41:00.000Z">
+<meta property="og:updated_time" content="2016-02-23T10:05:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="inline-block">
 <meta name="twitter:description" content="一直想写一结篇关于inline-block的总结,但一直不知道如何下笔可以写得更全面，具体一点。而且网上相关文章也可以一搜一大堆，不知写出来的还有没有必要，但最终还是觉得被inline-block坑过的人太多了，还是记录下来，留下一点纪念好一点。
@@ -105,9 +105,9 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.a-inline</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。<br><a id="more"></a></p>
 <ul>
-<li>2)block元素的display:inline-block<br><img src="http://img02.taobaocdn.com/tps/i2/T1B5rEXXNdXXau2DD4-486-217.png"><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.li-block</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>2)block元素的display:inline-block<br><img src="http://img02.taobaocdn.com/tps/i2/T1B5rEXXNdXXau2DD4-486-217.png"></li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.li-block</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>ie6中的block元素即使触发了haslayout也不具有inline-block元素不换行的特性，想要block元素支持inline-block元素的特性，可以这样做<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.li-block</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value">inline</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure></p>
 <p> 首先让block元素转化为inline元素，强制其不换行，然后通过zoom:1触发haslayout,使基可以设置宽高。<br><img src="http://img03.taobaocdn.com/tps/i3/T1vibEXcheXXbfe2f.-517-91.png"></p>
 <p>  <span style="color:red">    总结：现代浏览器都支持display:inline-block,ie6,7的 inline元素也可以达到，ie6.7的black元素需要设置display：inline；zoom:1;</span><br>  <span style="color:green; font-weight:bold;"><br>  ie6,7并不是不支持inline-block,只是block元素需要做一些处理来达到inline-block的效果。<br>  </span></p>
@@ -117,15 +117,15 @@
 <li><p>ie6,7 display:inline-block后两种情况<br><img src="http://img01.taobaocdn.com/tps/i1/T1.EjEXalaXXXxnXr3-411-212.png"></p>
 </li>
 </ul>
-<p>通常情况下，对于多个连续的空白符（空格，换行符，回车符等），浏览器会将他们合并为一个空白符。 </p>
-<p>删除换行符后，inline 元素间的空隙就「消失」了： </p>
+<p>通常情况下，对于多个连续的空白符（空格，换行符，回车符等），浏览器会将他们合并为一个空白符。</p>
+<p>删除换行符后，inline 元素间的空隙就「消失」了：</p>
 <p>HTML 中的换行符、空格符、制表符等产生了空白符，而这些归根结底都是字符，那么它们的大小都是受 font-size 来控制的，字体大小直接导致 inline 或者 inline-block 后元素之间空隙的大小，把 inline-block 元素间的空隙认为总是某个固定大小是错误的。font-szie越大空隙越大。为0时空隙也为0.</p>
 <p>所以这并不是 inline-block 后产生的 bug，而是因为 inline-block 具有 inline 元素固有的特性。那么为何 IE6、7 block 元素没有产生空隙呢？其实前面也提到了 IE 的 hasLayout，具有独立性，所以产生 hasLayout 的元素之间表现出来互不影响，这也再次表明 IE6、7 中的 inline-block 不能等同于 CSS2.1 中的 inline-block。如果非要说是有 bug， IE6、7 block 元素 inline-block 后不产生空隙才是 bug。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cikz79q7i0003vd9ggxql76qr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cikz8xd9p0003yf9gkb2wz71o" class="article-share-link">Share</a>
       
       
     </footer>
