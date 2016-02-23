@@ -87,19 +87,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>    在程序员眼中，CSS是一件很麻烦的东西，它不像js那样，CSS没有变量，没有条件语句，只是一行行单纯的描述，写起来比较费事。</strong><br><strong>    书写CSS难以解决的问题：</strong>    </p>
+        <p><strong>    在程序员眼中，CSS是一件很麻烦的东西，它不像js那样，CSS没有变量，没有条件语句，只是一行行单纯的描述，写起来比较费事。</strong><br><strong>    书写CSS难以解决的问题：</strong></p>
 <ul>
 <li>语法不够强大，比如无法嵌套书写导致模块化开发中需要书写很多重复的选择器；</li>
-<li>没有变量和合理的样式复用机制，使得逻辑上相关的属性值必须以字面量的形式重复输出，导致难以维护    </li>
+<li>没有变量和合理的样式复用机制，使得逻辑上相关的属性值必须以字面量的形式重复输出，导致难以维护</li>
 </ul>
-<p><strong>    为了让CSS更加简洁，适应性更强等，就给CSS加入了编程元素，叫做CSS预处理。<br>CSS预处理器的主要目标：提供CSS缺失的样式层复用机制，减少冗余代码，提高样式代码的可维护性。<br>今天介绍其中的一种css预处理器——sass</strong></p>
-<h2 id="sass文件后缀名">sass文件后缀名</h2><p><strong>好多人不知道sass与scss的关系是什么，明明每天说的是sass为什么文件的后缀名都是scss呢？其实scss是sass的新语法。</strong>    </p>
+<p><strong>    为了让CSS更加简洁，适应性更强等，就给CSS加入了编程元素，叫做CSS预处理。<br>CSS预处理器的主要目标：提供CSS缺失的样式层复用机制，减少冗余代码，提高样式代码的可维护性。<br>今天介绍其中的一种css预处理器——sass    </strong></p>
+<h2 id="sass文件后缀名">sass文件后缀名</h2><p><strong>好多人不知道sass与scss的关系是什么，明明每天说的是sass为什么文件的后缀名都是scss呢？其实scss是sass的新语法。</strong></p>
 <p><img src="/images/scss/01.jpg" alt=""></p>
-<h5 id="Sass有两种后缀名文件：">Sass有两种后缀名文件：</h5><ul>
+<p><h5>Sass有两种后缀名文件：</h5></p>
+<ul>
 <li>Sass文件是缩进式的写法，对格式要求比较严谨，末尾不能有分号，不使用大括号。Sass的老语法规则</li>
 <li>Scss后缀名就是和css文件格式差不多，要使用大括号和分号，方便阅读，不容易出错。 Sass的新语法规则</li>
 </ul>
-<h2 id="sass嵌套">sass嵌套</h2><p><strong>    Sass最直观的与css的不同，就体现在视觉上的嵌套</strong><br><strong>    Sass中的嵌套有两种：</strong><br><img src="/images/scss/05.png" alt=""><br><strong>    这两种嵌套的目的都是一样的，减少代码量，增强代码的可读性</strong><br><strong>    1，选择器嵌套是指从一个选择器中嵌套子选择器，来实现选择器的继承关系。</strong></p>
+<h2 id="sass嵌套">sass嵌套</h2><p><strong>    Sass最直观的与css的不同，就体现在视觉上的嵌套</strong><br><strong>    Sass中的嵌套有两种：</strong><br><img src="/images/scss/05.png" alt=""><br><strong>    这两种嵌套的目的都是一样的，减少代码量，增强代码的可读性</strong></p>
+<p>    1，选择器嵌套是指从一个选择器中嵌套子选择器，来实现选择器的继承关系。</p>
+
 <pre>
 .header{
     .logo{
@@ -111,43 +114,7 @@
 }
 </pre>
 
-<p><strong>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</strong></p>
-<pre>
-h3{
-    font:{
-        size:26px;
-        weight:normal;
-        family:arial;
-    }
-    text:{
-        transform: uppercase;
-        decoration: underline;
-    }
-}
-
-</pre>
-
-<p><strong> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</strong><br><strong>下面展示几个与连体符结合的事例：</strong></p>
-<p><p style="color: red">&amp;替代元素自身</p><br><strong>    下面的例子减少了选择器的重复书写</strong></p>
-<pre>
-.m-detail{
-  &-bd{
-    color: red;
-    .title{
-      font-size: 20px;
-      .link{
-        color: blue;
-      }
-    }
-  }
-  &-hd{
-    color: green;
-  }
-  &-ft{
-    color: black;
-  }
-}
-</pre>
+<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br>h3{<br>    font:{<br>        size:26px;<br>        weight:normal;<br>        family:arial;<br>    }<br>    text:{<br>        transform: uppercase;<br>        decoration: underline;<br>    }<br>}<br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br>.m-detail{<br>  &amp;-bd{<br>    color: red;<br>    .title{<br>      font-size: 20px;<br>      .link{<br>        color: blue;<br>      }<br>    }<br>  }<br>  &amp;-hd{<br>    color: green;<br>  }<br>  &amp;-ft{<br>    color: black;<br>  }<br>}<br></pre><br>
         
           <p class="article-more-link">
             <a href="/2016/02/22/sass基本/#more">Read More</a>
@@ -156,7 +123,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cikz6x26n0003py9g9oon2ags" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cikz8b20j0000wc9gf6dqtr9m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +171,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cikxf6gdr0003xu9gj9gtr6jv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cikz79q7k0004vd9g9g5p3rrk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +221,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cikxf6gdp0002xu9gas0eyh1u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cikz79q7i0003vd9ggxql76qr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +270,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cikxf6gcs0000xu9grjaz0oze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cikz79q6y0000vd9giy3wd4fk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +314,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cikxf6gds0004xu9gpkxi2zt1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cikz79q7m0005vd9g75tw20ab" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +357,7 @@ h3{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cikxf6gdh0001xu9gojr9nuww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cikz79q7f0001vd9gywtlh0ox" class="article-share-link">Share</a>
       
       
     </footer>
