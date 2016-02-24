@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>无挂也无牵</title>
+  <title>走路去纽约</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="无挂也无牵">
+<meta property="og:title" content="走路去纽约">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="无挂也无牵">
+<meta property="og:site_name" content="走路去纽约">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无挂也无牵">
+<meta name="twitter:title" content="走路去纽约">
 <meta name="twitter:description">
   
-    <link rel="alternative" href="/atom.xml" title="无挂也无牵" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="走路去纽约" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,11 +33,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">无挂也无牵</a>
+        <a href="/" id="logo">走路去纽约</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">如果再见不能红着眼，是否还能红着脸</a>
+          <a href="/" id="subtitle">突然很想不要飞 想走路去纽约 看看这一路我曾经忽略的一切</a>
         </h2>
       
     </div>
@@ -64,6 +64,197 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-sass基础用法二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/24/sass基础用法二/" class="article-date">
+  <time datetime="2016-02-24T02:47:23.000Z" itemprop="datePublished">2016-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/24/sass基础用法二/">sass基础用法二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p>上一节的<a href="/2016/02/22/sass基本/">sass基础用法一</a>主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符、函数等。<br><em style="font-style:normal">建议大家对文章中所有举的例子自己都能在<a href="http://www.sassmeister.com/" target="_blank">sassmeister</a>上编译一下，加深理解。</em></p><p></p>
+<p></p><h2>sass-mixin(混合宏)</h2><p></p>
+<p></p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p><p></p>
+<p></p><h3>一，mixin参数类型</h3><p></p>
+<p></p><h4>1，无参数的mixin</h4><p></p>
+<pre><code>
+@mixin title-style {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+//调用
+.test{
+    @include title-style;
+}
+</code>
+</pre>
+<h4>2，一个参数的mixin</h4>
+<pre>
+@mixin title-style($color) {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color;
+}
+//调用
+.test{
+    @include title-style(#ccc);
+}
+</pre>
+<h4>3，多参数的mixin</h4>
+<pre>
+@mixin title-style($color, $background) {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color;
+    background: $background;
+}
+//调用
+.test{
+    @include title-style(#ccc, #f50);
+}
+</pre>
+<h4>4，默认的参数</h4>
+<strong>当你使用mixin的参数时，定义一个经常使用的值作为默认参数是很方便的，你只需要简单的调用mixin，不用传递参数，如果有默认的值，会把这个值传递过去。</strong>
+<pre>
+@mixin title-style($color, $background: #eee) {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color;
+    background: $background;
+}
+//调用
+.test{
+    @include title-style(#ccc);
+}
+//或是你可以想覆盖，传你需要的值
+.test{
+    @include title-style(#ccc,#000);
+}
+</pre>
+<strong>当你有多个默认参数在mixin中定义，你可以有选择的覆盖默认参数，而不需要全部重新定义。</strong>
+<pre>
+@mixin title-style($color: blue, $background: green) {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color;
+    background: $background;
+}
+//调用
+.test{
+    @include title-style($background:pink);
+}
+</pre>
+<h4>@content</h4>
+<strong>@content可以用来解决css3的@media带来的问题。它可以使@mixin接受一整块样式，接受的样式从@content开始。</strong>
+<pre>
+@mixin header{
+    .test{
+        @content;
+    }
+}
+@include header{
+    width:1000px;
+    height:200px;
+    .logo{
+        width:200px;
+    }
+}
+</pre>
+<h3>二，mixin实例展示</h3>
+<h4>解决浏览器前缀-单一参数</h4>
+<pre>
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+}
+//调用
+.test{
+    @include rounded(10px);
+}
+</pre>
+<h4>解决浏览器前缀-多个参数</h4>
+<pre>
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+       -moz-box-shadow: $x $y $blur $color;
+            box-shadow: $x $y $blur $color;
+}
+//调用
+.test{
+    @include shadow(0, 1px, 2px, rgba(0,0,0,.5));
+}
+
+//box-shadow设置很多个值 ，传递参数的后面加上...
+@mixin box-shadow($shadow...){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+//调用
+.test{
+    @include box-shadow(0 0 5px rgba(0,0,0,.3),inset 0 0 3px rgba(255,255,255,.5));
+}
+</pre>
+<h4>定义media-queries的最小最大宽度</h4>
+<pre>
+//选择器里面调用，强调以选择器为主
+@mixin screen($res-min, $res-max){
+  @media screen and ( min-width: $res-min ) and ( max-width: $res-max ){
+    @content;
+  }
+}
+#header{
+    @include screen(780px,1000px){
+        color:red;
+    }
+}
+
+//直接调用，强调以屏幕大小为主，可以方便组织所有在这个条件中的都写在一起
+//如果做响应式布局，我们建议使用第二种方法，以断点为主来写样式，把某个断点下的样式全部写在一起
+@include screen(780px,1000px){
+    body{
+        font-size:14px;
+    }
+}
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/24/sass基础用法二/" data-id="cil0jfu9t0005du9gb3rpnivc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-sass基本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -117,13 +308,13 @@
 <p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br>h3{<br>    font:{<br>        size:26px;<br>        weight:normal;<br>        family:arial;<br>    }<br>    text:{<br>        transform: uppercase;<br>        decoration: underline;<br>    }<br>}<br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br>.m-detail{<br>  &amp;-bd{<br>    color: red;<br>    .title{<br>      font-size: 20px;<br>      .link{<br>        color: blue;<br>      }<br>    }<br>  }<br>  &amp;-hd{<br>    color: green;<br>  }<br>  &amp;-ft{<br>    color: black;<br>  }<br>}<br></pre><br>
         
           <p class="article-more-link">
-            <a href="/2016/02/22/sass基本/#more">Read More</a>
+            <a href="/2016/02/22/sass基本/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cikz95ek70002zb9gh8q4ys37" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cil08p51p0002929gla1eq77n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,13 +356,13 @@
 <h3 id="flex-wrap">flex-wrap</h3><p><strong>这个主要用来定义伸缩容器里是单行还是多行显示,交叉轴的方向决定了新行堆放的方向</strong><br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-wrap</span>: <span class="string">nowrap | wrap | wrap-reverse</span></span><br><span class="line"><span class="attribute">nowrap</span>: <span class="string">（默认）不换行</span></span><br><span class="line"><span class="attribute">wrap</span>: <span class="string">换行，第一行在上方</span></span><br><span class="line"><span class="attribute">wrap-reverse</span>: <span class="string">换行，第一行在下方</span></span><br></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
-            <a href="/2016/02/17/flex布局/#more">Read More</a>
+            <a href="/2016/02/17/flex布局/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cikz95ek90004zb9gjsm6gt42" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cil08p51s0004929gvw8fih47" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,13 +406,13 @@
 <p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。<br>
         
           <p class="article-more-link">
-            <a href="/2015/11/09/inline-block/#more">Read More</a>
+            <a href="/2015/11/09/inline-block/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cikz95ek80003zb9gv60q6djv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cil08p51r0003929gy3o7l5n0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -264,13 +455,13 @@
 <p> 禁用的文本框应用了一个不同的样式<br> <span style="color:red">IE6-8不支持”:checked”,”:enabled”,”:disabled”这三种选择器。</span></p>
         
           <p class="article-more-link">
-            <a href="/2015/11/03/css选择器—伪类选择器/#more">Read More</a>
+            <a href="/2015/11/03/css选择器—伪类选择器/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cikz95ejp0000zb9gqqj3fv26" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cil08p5180000929gyo1s37q0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,13 +499,13 @@
 <p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素    </p>
         
           <p class="article-more-link">
-            <a href="/2015/11/02/d/#more">Read More</a>
+            <a href="/2015/11/02/d/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cikz95ekc0005zb9gvu5a7b4p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cil08p51w0005929gxgu6rjlt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -351,13 +542,13 @@
 <h2 id="2,_元素选择器（E）">2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">15px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2015/11/02/test/#more">Read More</a>
+            <a href="/2015/11/02/test/#more">查看更多</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cikz95ek40001zb9gsxaxvdn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cil08p51o0001929go09kqqc3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,25 +564,14 @@
           <aside id="sidebar">
   
     
-  
-    
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
-    </div>
-  </div>
-
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/24/sass基础用法二/">sass基础用法二</a>
+          </li>
         
           <li>
             <a href="/2016/02/22/sass基本/">sass基础用法一</a>
@@ -418,6 +598,21 @@
           </li>
         
       </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
