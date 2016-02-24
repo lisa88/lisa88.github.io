@@ -87,166 +87,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><p>上一节的<a href="/2016/02/22/sass基本/">sass基础用法一</a>主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符、函数等。<br><em style="font-style:normal">建议大家对文章中所有举的例子自己都能在<a href="http://www.sassmeister.com/" target="_blank">sassmeister</a>上编译一下，加深理解。</em></p><p></p>
-<p></p><h2>sass-mixin(混合宏)</h2><p></p>
-<p></p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p><p></p>
-<p></p><h3>一，mixin参数类型</h3><p></p>
-<p></p><h4>1，无参数的mixin</h4><p></p>
-<pre><code>
-@mixin title-style {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-//调用
-.test{
-    @include title-style;
-}
-</code>
-</pre>
-<h4>2，一个参数的mixin</h4>
-<pre>
-@mixin title-style($color) {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color;
-}
-//调用
-.test{
-    @include title-style(#ccc);
-}
-</pre>
-<h4>3，多参数的mixin</h4>
-<pre>
-@mixin title-style($color, $background) {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color;
-    background: $background;
-}
-//调用
-.test{
-    @include title-style(#ccc, #f50);
-}
-</pre>
-<h4>4，默认的参数</h4>
-<strong>当你使用mixin的参数时，定义一个经常使用的值作为默认参数是很方便的，你只需要简单的调用mixin，不用传递参数，如果有默认的值，会把这个值传递过去。</strong>
-<pre>
-@mixin title-style($color, $background: #eee) {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color;
-    background: $background;
-}
-//调用
-.test{
-    @include title-style(#ccc);
-}
-//或是你可以想覆盖，传你需要的值
-.test{
-    @include title-style(#ccc,#000);
-}
-</pre>
-<strong>当你有多个默认参数在mixin中定义，你可以有选择的覆盖默认参数，而不需要全部重新定义。</strong>
-<pre>
-@mixin title-style($color: blue, $background: green) {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color;
-    background: $background;
-}
-//调用
-.test{
-    @include title-style($background:pink);
-}
-</pre>
-<h4>@content</h4>
-<strong>@content可以用来解决css3的@media带来的问题。它可以使@mixin接受一整块样式，接受的样式从@content开始。</strong>
-<pre>
-@mixin header{
-    .test{
-        @content;
-    }
-}
-@include header{
-    width:1000px;
-    height:200px;
-    .logo{
-        width:200px;
-    }
-}
-</pre>
-<h3>二，mixin实例展示</h3>
-<h4>解决浏览器前缀-单一参数</h4>
-<pre>
-@mixin rounded($radius) {
-    -webkit-border-radius: $radius;
-       -moz-border-radius: $radius;
-            border-radius: $radius;
-}
-//调用
-.test{
-    @include rounded(10px);
-}
-</pre>
-<h4>解决浏览器前缀-多个参数</h4>
-<pre>
-@mixin shadow($x, $y, $blur, $color) {
-    -webkit-box-shadow: $x $y $blur $color;
-       -moz-box-shadow: $x $y $blur $color;
-            box-shadow: $x $y $blur $color;
-}
-//调用
-.test{
-    @include shadow(0, 1px, 2px, rgba(0,0,0,.5));
-}
-
-//box-shadow设置很多个值 ，传递参数的后面加上...
-@mixin box-shadow($shadow...){
-    -webkit-box-shadow:$shadow;
-    -moz-box-shadow:$shadow;
-    box-shadow:$shadow;
-}
-//调用
-.test{
-    @include box-shadow(0 0 5px rgba(0,0,0,.3),inset 0 0 3px rgba(255,255,255,.5));
-}
-</pre>
-<h4>定义media-queries的最小最大宽度</h4>
-<pre>
-//选择器里面调用，强调以选择器为主
-@mixin screen($res-min, $res-max){
-  @media screen and ( min-width: $res-min ) and ( max-width: $res-max ){
-    @content;
-  }
-}
-#header{
-    @include screen(780px,1000px){
-        color:red;
-    }
-}
-
-//直接调用，强调以屏幕大小为主，可以方便组织所有在这个条件中的都写在一起
-//如果做响应式布局，我们建议使用第二种方法，以断点为主来写样式，把某个断点下的样式全部写在一起
-@include screen(780px,1000px){
-    body{
-        font-size:14px;
-    }
-}
-</pre>
+        <p><p>上一节的<a href="/2016/02/22/sass基本/">sass基础用法一</a>主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符等。<br/><em style="font-style:normal">建议大家对文章中所有举的例子自己都能在<a href="http://www.sassmeister.com/" target="_blank">sassmeister</a>上编译一下，加深理解。</em></p></p>
+<p><h2>sass-mixin(混合宏)</h2></p>
+<p><p>mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常要用到多个元素中，这样就需要重复的写多次。在sass中，可以为这些公用的CSS样式定义一个mixin，然后在CSS需要使用这些样式的地方直接调用定义好的mixin。这是一个非常有用的特性，mixin被作一个公认的选择器，还可以在Mixins中定义变量或者默认参数。</p></p>
+<p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p></p>
+<p><h3>一，mixin参数类型</h3></p>
+<p><h4>1，无参数的mixin</h4><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@mixin</span> title-style &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">.test&#123;</span><br><span class="line">	<span class="variable">@include</span> title-style;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><h4>2，一个参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> title-style</span>(<span class="variable">$color</span>) &#123;</span></span><br><span class="line">    <span class="attribute">margin</span><span class="value">: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</span></span><br><span class="line">    <span class="attribute">font-size</span><span class="value">: <span class="number">20px</span>;</span></span><br><span class="line">    <span class="attribute">font-weight</span><span class="value">: bold;</span></span><br><span class="line">    <span class="attribute">text-transform</span><span class="value">: uppercase;</span></span><br><span class="line">    <span class="attribute">color</span><span class="value">: <span class="variable">$color</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="class">.test</span>&#123;</span><br><span class="line">	<span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> title-style</span>(<span class="hexcolor">#ccc</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/24/sass基础用法二/#more">查看更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/sass基础用法二/" data-id="cil0jfu9t0005du9gb3rpnivc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/sass基础用法二/" data-id="cil0or55l0000lc9gdnfr6821" class="article-share-link">Share</a>
       
       
     </footer>
@@ -294,18 +150,9 @@
 <h2 id="sass嵌套">sass嵌套</h2><p><strong>    Sass最直观的与css的不同，就体现在视觉上的嵌套</strong><br><strong>    Sass中的嵌套有两种：</strong><br><img src="/images/scss/05.png" alt=""><br><strong>    这两种嵌套的目的都是一样的，减少代码量，增强代码的可读性</strong></p>
 <p>    1，选择器嵌套是指从一个选择器中嵌套子选择器，来实现选择器的继承关系。</p>
 
-<pre>
-.header{
-    .logo{
-        display: block;
-    }
-    .list{
-        margin: 10px;
-    }
-}
-</pre>
 
-<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br>h3{<br>    font:{<br>        size:26px;<br>        weight:normal;<br>        family:arial;<br>    }<br>    text:{<br>        transform: uppercase;<br>        decoration: underline;<br>    }<br>}<br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br>.m-detail{<br>  &amp;-bd{<br>    color: red;<br>    .title{<br>      font-size: 20px;<br>      .link{<br>        color: blue;<br>      }<br>    }<br>  }<br>  &amp;-hd{<br>    color: green;<br>  }<br>  &amp;-ft{<br>    color: black;<br>  }<br>}<br></pre><br>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.header</span>&#123;</span><br><span class="line">	<span class="class">.logo</span>&#123;</span><br><span class="line">		<span class="attribute">display</span>: block;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class">.list</span>&#123;</span><br><span class="line">		<span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h3</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">font</span>:<span class="value">&#123;</span><br><span class="line">		size:<span class="number">26px</span></span></span>;</span><br><span class="line">	    <span class="rule"><span class="attribute">weight</span>:<span class="value">normal</span></span>;</span><br><span class="line">	    <span class="rule"><span class="attribute">family</span>:<span class="value">arial</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="tag">text</span>:<span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">transform</span>:<span class="value"> uppercase</span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">decoration</span>:<span class="value"> underline</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.m-detail</span>&#123;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-bd</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="class">.title</span>&#123;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="class">.link</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>: blue;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-hd</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-ft</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br></pre><br>
         
           <p class="article-more-link">
             <a href="/2016/02/22/sass基本/#more">查看更多</a>
@@ -314,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cil08p51p0002929gla1eq77n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/sass基本/" data-id="cil0p404n0001lc9g6h9grx42" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cil08p51s0004929gvw8fih47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cil0m2n880005ig9gbp5ex8vg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cil08p51r0003929gy3o7l5n0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cil0m2n860004ig9g1km9bptn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -461,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cil08p5180000929gyo1s37q0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cil0m2n8c0007ig9gv5g6tsdw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -505,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cil08p51w0005929gxgu6rjlt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cil0m2n890006ig9gch810q3l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -548,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cil08p51o0001929go09kqqc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/test/" data-id="cil0m2n7z0001ig9gnm951djr" class="article-share-link">Share</a>
       
       
     </footer>
