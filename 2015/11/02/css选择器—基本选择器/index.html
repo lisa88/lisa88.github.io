@@ -1,0 +1,586 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。HTML页面中的元素就是通过CSS选择器进行控制的。
+基本选择器1, 通配符选择器（*）通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素1234567*&amp;#123;    margin:0;    padding:0;&amp;#125;.a *&amp;#123;    color:red;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css选择器—基本选择器">
+<meta property="og:url" content="http://yoursite.com/2015/11/02/css选择器—基本选择器/index.html">
+<meta property="og:site_name" content="直到那一天">
+<meta property="og:description" content="要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。HTML页面中的元素就是通过CSS选择器进行控制的。
+基本选择器1, 通配符选择器（*）通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素1234567*&amp;#123;    margin:0;    padding:0;&amp;#125;.a *&amp;#123;    color:red;&amp;#125;">
+<meta property="og:updated_time" content="2016-02-25T03:58:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css选择器—基本选择器">
+<meta name="twitter:description" content="要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。HTML页面中的元素就是通过CSS选择器进行控制的。
+基本选择器1, 通配符选择器（*）通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素1234567*&amp;#123;    margin:0;    padding:0;&amp;#125;.a *&amp;#123;    color:red;&amp;#125;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> css选择器—基本选择器 | 直到那一天 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">直到那一天</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">ddd</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css选择器—基本选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-11-02T13:56:58+08:00" content="2015-11-02">
+              2015-11-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。<br>HTML页面中的元素就是通过CSS选择器进行控制的。</p>
+<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><h2 id="1-通配符选择器（-）"><a href="#1-通配符选择器（-）" class="headerlink" title="1, 通配符选择器（*）"></a>1, 通配符选择器（*）</h2><p>通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.a</span> *&#123;</div><div class="line">    <span class="attribute">color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-元素选择器（E）"><a href="#2-元素选择器（E）" class="headerlink" title="2, 元素选择器（E）"></a>2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">15px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="3-类选择器（-className）"><a href="#3-类选择器（-className）" class="headerlink" title="3, 类选择器（.className）"></a>3, 类选择器（.className）</h2><p>类选择器是以一独立于文档元素的方式来指定样式，使用类选择器之前需要在html元素上定义类名</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">h1</span> class=<span class="string">"title"</span>&gt;类选择器&lt;/h1&gt;</div><div class="line"></div><div class="line">.title&#123; <span class="attribute">color</span>:red; &#125;</div></pre></td></tr></table></figure>
+<p>类选择器还可以具备多类名(<span style="color:red;">ie6不支持多类选择器</span>)</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">h1</span> class=<span class="string">"title main-text"</span>&gt;类选择器&lt;/h1&gt;</div><div class="line"></div><div class="line"><span class="selector-class">.title</span><span class="selector-class">.main-title</span>&#123; <span class="attribute">color</span>:black;&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-id选择器（-id）"><a href="#4-id选择器（-id）" class="headerlink" title="4, id选择器（#id）"></a>4, id选择器（#id）</h2><p>使用ID选择器之前也需要先在html文档中加注ID名称，这样在样式选择器中才能找到相对应的元素，不同的是ID选择器是一个页面中唯一的值</p>
+<h3 id="id选择器有几个地方需要特别注意"><a href="#id选择器有几个地方需要特别注意" class="headerlink" title="id选择器有几个地方需要特别注意"></a>id选择器有几个地方需要特别注意</h3><ul>
+<li>一个文档中一个id选择器只充许使用一次，因为id在页面中是唯一的</li>
+<li>id选择器不能像类选择器一样多个合并使用，一个元素只能命名一个id名</li>
+<li>可以在不同的文档中使用相同的id名</li>
+</ul>
+<h2 id="5-后代选择器（E-F）"><a href="#5-后代选择器（E-F）" class="headerlink" title="5,后代选择器（E F）"></a>5,后代选择器（E F）</h2><p>后代选择器也被称作包含选择器,所起作用就是可以选择某元素的后代元素<br>E F，前面E为祖先元素，Ｆ为后代元素，不论Ｆ在Ｅ中有多少层关系，都将被选中<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">li</span>&#123; <span class="attribute">background-color</span>: blue; &#125;</div></pre></td></tr></table></figure></p>
+<p>选中demo中的所有的li元素</p>
+<h2 id="6-子元素选择器（E-gt-F）"><a href="#6-子元素选择器（E-gt-F）" class="headerlink" title="6, 子元素选择器（E&gt;F）"></a>6, 子元素选择器（E&gt;F）</h2><p>子元素选择器只能选择某元素的子元素，其中E为父元素，而F为子元素，其中E&gt;F所表示的是选择了Ｅ元素下的所有子元素Ｆ<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span> &#123;<span class="attribute">background</span>: green; <span class="attribute">color</span>: yellow;&#125;</div></pre></td></tr></table></figure></p>
+<p>选择ul下的所有的子元素li，孙元素是不选择的<br><span style="color:red">ie6不支持子元素选择器</span></p>
+<h2 id="7-相邻兄弟元素选择器（E-F）"><a href="#7-相邻兄弟元素选择器（E-F）" class="headerlink" title="7, 相邻兄弟元素选择器（E+F）"></a>7, 相邻兄弟元素选择器（E+F）</h2><p>相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.h1</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">background</span>: green; &#125;</div></pre></td></tr></table></figure></p>
+<p>只选择h1后的第一个p元素<br><span style="color:red">ie6不支持相邻兄弟选择器</span></p>
+<h2 id="8-通用兄弟选择器（E-F）"><a href="#8-通用兄弟选择器（E-F）" class="headerlink" title="8, 通用兄弟选择器（E~F）"></a>8, 通用兄弟选择器（E~F）</h2><p>这种选择器将选择某元素后面的所有兄弟元素，他们也和相邻兄弟元素类似，需要在同一个父元素之中，换句话说，E和F元素是属于同一父元素之内，并且F元素在Ｅ元素之后，那么E ~ F 选择器将选择中所有Ｅ元素后面的Ｆ元素。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.h1</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">background</span>: green; &#125;</div></pre></td></tr></table></figure></p>
+<p>选择h1后面的所有p元素</p>
+<p><span style="color:green">相邻兄弟选择器仅选择与其相邻的后面的元素（选中的仅一个元素）；而通用兄弟元素选择器，选中的是元素相邻的后面的所有兄弟元素，</span><br><span style="color:red">ie6不支持相邻兄弟选择器</span></p>
+<h2 id="9-群组选择器（E-F）"><a href="#9-群组选择器（E-F）" class="headerlink" title="9, 群组选择器（E~F）"></a>9, 群组选择器（E~F）</h2><p>群组选择器是将具有相同样式的元素分组在一起，每个选择器之间使用逗号<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.<span class="built_in">text</span>, .sub-<span class="built_in">text</span>&#123; font-<span class="built_in">size</span>：<span class="number">10</span>px;&#125;</div></pre></td></tr></table></figure></p>
+<!-- more -->
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/02/css选择器—属性选择器/" rel="prev" title="css选择器—属性选择器">
+                css选择器—属性选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xiaoshuang.meng" />
+          <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
+          <p class="site-description motion-element" itemprop="description">页面重构人员，日常前端记录</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.</span> <span class="nav-text">基本选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-通配符选择器（-）"><span class="nav-number">1.1.</span> <span class="nav-text">1, 通配符选择器（*）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-元素选择器（E）"><span class="nav-number">1.2.</span> <span class="nav-text">2, 元素选择器（E）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-类选择器（-className）"><span class="nav-number">1.3.</span> <span class="nav-text">3, 类选择器（.className）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-id选择器（-id）"><span class="nav-number">1.4.</span> <span class="nav-text">4, id选择器（#id）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#id选择器有几个地方需要特别注意"><span class="nav-number">1.4.1.</span> <span class="nav-text">id选择器有几个地方需要特别注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-后代选择器（E-F）"><span class="nav-number">1.5.</span> <span class="nav-text">5,后代选择器（E F）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-子元素选择器（E-gt-F）"><span class="nav-number">1.6.</span> <span class="nav-text">6, 子元素选择器（E>F）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-相邻兄弟元素选择器（E-F）"><span class="nav-number">1.7.</span> <span class="nav-text">7, 相邻兄弟元素选择器（E+F）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-通用兄弟选择器（E-F）"><span class="nav-number">1.8.</span> <span class="nav-text">8, 通用兄弟选择器（E~F）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-群组选择器（E-F）"><span class="nav-number">1.9.</span> <span class="nav-text">9, 群组选择器（E~F）</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoshuang.meng</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

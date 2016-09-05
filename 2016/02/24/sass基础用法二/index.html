@@ -1,0 +1,605 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="上一节的sass基础用法一主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符等。建议大家对文章中所有举的例子自己都能在sassmeister上编译一下，加深理解。
+sass-mixin(混合宏)
+mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass基础用法二">
+<meta property="og:url" content="http://yoursite.com/2016/02/24/sass基础用法二/index.html">
+<meta property="og:site_name" content="直到那一天">
+<meta property="og:description" content="上一节的sass基础用法一主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符等。建议大家对文章中所有举的例子自己都能在sassmeister上编译一下，加深理解。
+sass-mixin(混合宏)
+mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常">
+<meta property="og:image" content="http://yoursite.com/images/scss/c9.png">
+<meta property="og:image" content="http://yoursite.com/images/scss/c7.png">
+<meta property="og:image" content="http://yoursite.com/images/scss/c8.png">
+<meta property="og:updated_time" content="2016-02-25T08:01:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass基础用法二">
+<meta name="twitter:description" content="上一节的sass基础用法一主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符等。建议大家对文章中所有举的例子自己都能在sassmeister上编译一下，加深理解。
+sass-mixin(混合宏)
+mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常">
+<meta name="twitter:image" content="http://yoursite.com/images/scss/c9.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> sass基础用法二 | 直到那一天 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">直到那一天</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">ddd</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sass基础用法二
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-02-24T10:47:23+08:00" content="2016-02-24">
+              2016-02-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/SASS/" itemprop="url" rel="index">
+                    <span itemprop="name">SASS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p>上一节的<a href="/2016/02/22/sass基本/">sass基础用法一</a>主要是从sass文件后缀名、嵌套、变量、编译等进行了介绍。这篇主要介绍mixin、继承、%点位符等。<br><em style="font-style:normal">建议大家对文章中所有举的例子自己都能在<a href="http://www.sassmeister.com/" target="_blank">sassmeister</a>上编译一下，加深理解。</em></p><p></p>
+<p></p><h2>sass-mixin(混合宏)</h2><p></p>
+<p></p><p>mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常要用到多个元素中，这样就需要重复的写多次。在sass中，可以为这些公用的CSS样式定义一个mixin，然后在CSS需要使用这些样式的地方直接调用定义好的mixin。这是一个非常有用的特性，mixin被作一个公认的选择器，还可以在Mixins中定义变量或者默认参数。</p><p></p>
+<p></p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p><p></p>
+<p></p><h3>一，mixin参数类型</h3><p></p>
+<p></p><h4>1，无参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>2，一个参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<a id="more"></a>
+<p></p><h4>3，多参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>, <span class="variable">$background</span>) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="variable">$background</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>, <span class="number">#f50</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>4，默认的参数</h4><br><strong>当你使用mixin的参数时，定义一个经常使用的值作为默认参数是很方便的，你只需要简单的调用mixin，不用传递参数，如果有默认的值，会把这个值传递过去。</strong><p></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>, <span class="variable">$background</span>: <span class="number">#eee</span>) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="variable">$background</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//或是你可以想覆盖，传你需要的值</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>,<span class="number">#000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>当你有多个默认参数在mixin中定义，你可以有选择的覆盖默认参数，而不需要全部重新定义。</strong><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>: blue, <span class="variable">$background</span>: green) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="variable">$background</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="variable">$background</span>:pink);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p></p><h4>@content</h4><br><strong>@content可以用来解决css3的@media带来的问题。它可以使@mixin接受一整块样式，接受的样式从@content开始。</strong><br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@mixin</span> header&#123;</div><div class="line">    <span class="selector-class">.test</span>&#123;</div><div class="line">        <span class="variable">@content</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="variable">@include</span> header&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">1000px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="selector-class">.logo</span>&#123;</div><div class="line">        <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>二，mixin实例展示</h3><p></p>
+<p></p><h4>解决浏览器前缀-单一参数</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> rounded(<span class="variable">$radius</span>) &#123;</div><div class="line">    -webkit-<span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</div><div class="line">       -moz-<span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</div><div class="line">            <span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> rounded(<span class="number">10px</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>解决浏览器前缀-多个参数</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> shadow(<span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$color</span>) &#123;</div><div class="line">    -webkit-<span class="attribute">box-shadow</span>: <span class="variable">$x</span> <span class="variable">$y</span> <span class="variable">$blur</span> <span class="variable">$color</span>;</div><div class="line">       -moz-<span class="attribute">box-shadow</span>: <span class="variable">$x</span> <span class="variable">$y</span> <span class="variable">$blur</span> <span class="variable">$color</span>;</div><div class="line">            <span class="attribute">box-shadow</span>: <span class="variable">$x</span> <span class="variable">$y</span> <span class="variable">$blur</span> <span class="variable">$color</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> shadow(<span class="number">0</span>, 1px, 2px, rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">5</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//box-shadow设置很多个值 ，传递参数的后面加上...</span></div><div class="line">@<span class="keyword">mixin</span> box-shadow(<span class="variable">$shadow</span>...)&#123;</div><div class="line">    -webkit-<span class="attribute">box-shadow</span>:<span class="variable">$shadow</span>;</div><div class="line">    -moz-<span class="attribute">box-shadow</span>:<span class="variable">$shadow</span>;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="variable">$shadow</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> box-shadow(<span class="number">0</span> 0 5px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">3</span>),inset 0 0 3px rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,.<span class="number">5</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>定义media-queries的最小最大宽度</h4><br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选择器里面调用，强调以选择器为主</span></div><div class="line"><span class="variable">@mixin</span> screen($res-min, $res-max)&#123;</div><div class="line">  <span class="keyword">@media</span> screen and ( <span class="attribute">min-width</span>: $res-min ) and ( <span class="attribute">max-width</span>: $res-max )&#123;</div><div class="line">    <span class="variable">@content</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#header</span>&#123;</div><div class="line">    <span class="variable">@include</span> screen(<span class="number">780px</span>,<span class="number">1000px</span>)&#123;</div><div class="line">        <span class="attribute">color</span>:red;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//直接调用，强调以屏幕大小为主，可以方便组织所有在这个条件中的都写在一起</span></div><div class="line"><span class="comment">//如果做响应式布局，我们建议使用第二种方法，以断点为主来写样式，把某个断点下的样式全部写在一起</span></div><div class="line"><span class="variable">@include</span> screen(<span class="number">780px</span>,<span class="number">1000px</span>)&#123;</div><div class="line">    <span class="selector-tag">body</span>&#123;</div><div class="line">        <span class="attribute">font-size</span>:<span class="number">14px</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p><img src="/images/scss/c9.png" alt=""></p>
+<p></p><p>mixin一次定义多次使用，缺点，编译后同样的代码不能合并显示</p><p></p>
+<p></p><h2>sass-继承</h2><p></p>
+<p></p><p>在css中的属性继承应该很熟悉。平时在写CSS样式也常碰到多个元素应用相同的样式，我们在CSS中常把具有相同样式的选择器并列写在一起：</p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a</span>,<span class="selector-class">.b</span>&#123;</div><div class="line">	<span class="attribute">color</span>: red;</div><div class="line">	<span class="attribute">background-color</span>: white;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.a</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">30px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.b</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><p>但往往需给单独的元素添加另外的样式，这个时候我们就需要把其中选择器单独出来写样式，如此一来我们维护样式就相当的麻烦。为了应对这个问题，sass可以从一个选择器继承另一个选择器下的所有样式。</p><p></p>
+<p></p><p>sass中，选择器继承可以让选择器继承另一个选择器的所有样式，并联合声明。使用选择器的继承，要使用关键词@extend，后面紧跟需要继承的选择器。</p><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个类</span></div><div class="line"><span class="selector-class">.block</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">5px</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">2px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    @<span class="keyword">extend</span> .block;<span class="comment">/*继承.block选择器下所有样式*/</span></div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">ol</span> &#123;</div><div class="line">    @<span class="keyword">extend</span> .block;<span class="comment">/*继承.block选择器下所有样式*/</span></div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果</span></div><div class="line"><span class="selector-class">.block</span>,<span class="selector-tag">p</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>&#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">5px</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">2px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">ol</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><p>在sass中的继承可以继承类中所有的样式代码，而且编译出来的css会将选择器合并在一起，形成组合选择器</p><br><img src="/images/scss/c7.png" alt=""><p></p>
+<p></p><p>.button 类名可能用在不同之处，有不同的容器包裹着，然而sass中的@extend无法判断引用哪个地方的.button，所以他自己做主，将不同地方出现的.button类名都引入进来，也就造成了刚才的编译后的效果<br><br>通过@extend引用的类名，你要有绝对的自信，它从未用在任何个地方、<br><br>麻烦的是，你不能总确定他未用到几个地方，你能保证现在的你自己，但你不保证未来你或是同事不在别的地方引用这个类名，无意之间，就会踩上这个地雷，把这个事情搞砸。所以这种方式还是能不用就别用了。<br><br>既想要编译出将选择器合并后的代码，但又不想能随意使用.class的方式，要怎么办呢，有没有更好更两全其美的方法呢？</p><p></p>
+<p></p><h2>sass-%占位符</h2><p></p>
+<p></p><p>%是一个功能很强大，很实用的一个功能。<br><br>%只是一个占位选择器，他不是正常的选择器，不像.<br>class，只要不通过@extend调用，他是不会产生任何代码量，<br><br>简单来说，先定义好一段样式，但是这个样式默认是不会解析出来的，等到你通过@extend调用了才会解析在css文件中，避免了生成冗余浪费的css代码。这个功能对于我们取代.class与@extend是最完美的。</p><br><img src="/images/scss/c8.png" alt=""><p></p>
+<p></p><h2>总结：</h2><p></p>
+<ul>
+<li>首先%定义的占位选择器样式不能传递参数。</li>
+<li>如果你需要使用变量，最好使用@mixin，否则使用%placeholder</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/22/sass基础用法一/" rel="next" title="sass基础用法一">
+                <i class="fa fa-chevron-left"></i> sass基础用法一
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/02/git/" rel="prev" title="git">
+                git <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xiaoshuang.meng" />
+          <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
+          <p class="site-description motion-element" itemprop="description">页面重构人员，日常前端记录</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">sass-mixin(混合宏)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">一，mixin参数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">1，无参数的mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.2.</span> <span class="nav-text">2，一个参数的mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.3.</span> <span class="nav-text">3，多参数的mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.4.</span> <span class="nav-text">4，默认的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.5.</span> <span class="nav-text">@content</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">二，mixin实例展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">解决浏览器前缀-单一参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">解决浏览器前缀-多个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">定义media-queries的最小最大宽度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">sass-继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">sass-%占位符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoshuang.meng</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

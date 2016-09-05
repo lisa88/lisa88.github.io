@@ -1,0 +1,623 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="伪类选择器一，动态伪类动态伪类包含两种(只有当用户和网站交互的时候才能体现出来)
+
+在链接中常看到的锚点伪类 如：“:link,:visited”
+用户行为伪类 如：“:hover,:active,:focus”
+
+对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。
+ 
+二，UI元素状态伪类 :enabled,:disabled,:c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css选择器—伪类选择器">
+<meta property="og:url" content="http://yoursite.com/2015/11/03/css选择器—伪类选择器/index.html">
+<meta property="og:site_name" content="直到那一天">
+<meta property="og:description" content="伪类选择器一，动态伪类动态伪类包含两种(只有当用户和网站交互的时候才能体现出来)
+
+在链接中常看到的锚点伪类 如：“:link,:visited”
+用户行为伪类 如：“:hover,:active,:focus”
+
+对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。
+ 
+二，UI元素状态伪类 :enabled,:disabled,:c">
+<meta property="og:updated_time" content="2016-02-25T08:02:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css选择器—伪类选择器">
+<meta name="twitter:description" content="伪类选择器一，动态伪类动态伪类包含两种(只有当用户和网站交互的时候才能体现出来)
+
+在链接中常看到的锚点伪类 如：“:link,:visited”
+用户行为伪类 如：“:hover,:active,:focus”
+
+对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。
+ 
+二，UI元素状态伪类 :enabled,:disabled,:c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> css选择器—伪类选择器 | 直到那一天 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">直到那一天</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">ddd</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css选择器—伪类选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-11-03T11:47:01+08:00" content="2015-11-03">
+              2015-11-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><h2 id="一，动态伪类"><a href="#一，动态伪类" class="headerlink" title="一，动态伪类"></a>一，动态伪类</h2><h3 id="动态伪类包含两种"><a href="#动态伪类包含两种" class="headerlink" title="动态伪类包含两种"></a>动态伪类包含两种</h3><p>(只有当用户和网站交互的时候才能体现出来)</p>
+<ul>
+<li>在链接中常看到的锚点伪类 如：“:link,:visited”</li>
+<li>用户行为伪类 如：“:hover,:active,:focus”</li>
+</ul>
+<p><span style="color:red;">对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。</span></p>
+<p> </p>
+<h2 id="二，UI元素状态伪类"><a href="#二，UI元素状态伪类" class="headerlink" title="二，UI元素状态伪类"></a>二，UI元素状态伪类</h2><p> :enabled,:disabled,:checked UI元素状态伪类<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span><span class="selector-pseudo">:disabled</span> &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#999</span>;<span class="attribute">background-color</span>: <span class="number">#fefefe</span>;&#125;</div></pre></td></tr></table></figure></p>
+<p> 禁用的文本框应用了一个不同的样式<br> <span style="color:red">IE6-8不支持”:checked”,”:enabled”,”:disabled”这三种选择器。</span></p>
+ <a id="more"></a>
+<h2 id="三，css3的-nth选择器"><a href="#三，css3的-nth选择器" class="headerlink" title="三，css3的:nth选择器"></a>三，css3的:nth选择器</h2><h3 id="1-first-child"><a href="#1-first-child" class="headerlink" title="1,    :first-child"></a>1,    :first-child</h3><p> :first-child是用来选择某个元素的第一个子元素<br> <figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">	&lt;<span class="keyword">li</span>&gt;1,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</div><div class="line">	&lt;<span class="keyword">li</span>&gt;2,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">.<span class="keyword">list</span> <span class="keyword">li</span>:first-child&#123; background-color: red; &#125;</div></pre></td></tr></table></figure></p>
+<p> .list的第一个子元素li背景变红</p>
+<h3 id="2-last-child"><a href="#2-last-child" class="headerlink" title="2,    :last-child"></a>2,    :last-child</h3><p> :last-child是用来选择某个元素的最后一个子元素<br>  <figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">	&lt;<span class="keyword">li</span>&gt;1,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</div><div class="line">	&lt;<span class="keyword">li</span>&gt;2,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">.<span class="keyword">list</span> <span class="keyword">li</span>:first-child&#123; background-color: red; &#125;</div></pre></td></tr></table></figure></p>
+<p> .list的最后一个子元素li背景变红</p>
+<h3 id="3-nth-child（）"><a href="#3-nth-child（）" class="headerlink" title="3,    :nth-child（）"></a>3,    :nth-child（）</h3><p>  :nth-child()可以选择某个的一个或多个特定的子元素<br>  <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">:nth-child(length)</span>;<span class="comment">/*参数是具体数字*/</span></div><div class="line"><span class="selector-pseudo">:nth-child(n)</span>;<span class="comment">/*参数是n,n从0开始计算*/</span></div><div class="line"><span class="selector-pseudo">:nth-child(n</span>*<span class="selector-tag">length</span>)<span class="comment">/*n的倍数选择，n从0开始算*/</span></div><div class="line"><span class="selector-pseudo">:nth-child(n+length)</span>;<span class="comment">/*选择大于length后面的元素*/</span></div><div class="line"><span class="selector-pseudo">:nth-child(-n+length)</span><span class="comment">/*选择小于length前面的元素*/</span></div><div class="line"><span class="selector-pseudo">:nth-child(n</span>*<span class="selector-tag">length</span>+<span class="selector-tag">1</span>);<span class="comment">/*表示隔几选一*/</span></div></pre></td></tr></table></figure></p>
+<p>  :nth-child(n)其中n是一个简单的表达式，n的取值从0开始计算，到什么时候结束不知道，如果直接这样写，将会选中所有子元素。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n     选择所有子元素  --&gt;	<span class="number">2</span>n   选择n的<span class="number">2</span>倍数所有偶数子元素</div><div class="line">n=<span class="number">0</span>   没有选择元素	--&gt;    <span class="number">2</span>n=<span class="number">0</span>  没有选中任何元素</div><div class="line">n=<span class="number">1</span>   选择第一个子元素--&gt;    <span class="number">2</span>n=<span class="number">2</span>  选择了第二个li</div><div class="line">n=<span class="number">2</span>   选择第二个子元素--&gt;    <span class="number">2</span>n=<span class="number">4</span>  选择了地四个li</div><div class="line"><span class="symbol">:nth-chlid</span>(<span class="number">2</span>n) 等于 <span class="symbol">:nth-chlid</span>(even)选择偶数</div><div class="line"><span class="symbol">:nth-child</span>(<span class="number">2</span>n-<span class="number">1</span>) 等于 <span class="symbol">:nth-child</span>(odd)选择奇数</div></pre></td></tr></table></figure></p>
+<p><span style="color:red">IE6-8和FF3-浏览器不支持”:nth-child”选择器。 </span></p>
+<h3 id="4-nth-last-child（）"><a href="#4-nth-last-child（）" class="headerlink" title="4,    :nth-last-child（）"></a>4,    :nth-last-child（）</h3><p>:nth-last-child 从最后一个元素开始算，来选择特定元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-last-child(3)</span>&#123;<span class="attribute">color</span>:red&#125;</div><div class="line">倒数第三个<span class="selector-tag">li</span>字体颜色是红色</div></pre></td></tr></table></figure></p>
+<p>:nth-last-child(1) 等于 :last-child<br>:nth-last-child()  可以使用表达式来选择特定元素<br>“:nth-child()”是从元素的第一个开始计算，而“:nth-last-child()”是从元素的最后一个开始计算，他们的计算方法都是一样的。</p>
+<div style="color:red">IE6-8和FF3.0-浏览器不支持</div>
+
+<h3 id="5-nth-of-type（）"><a href="#5-nth-of-type（）" class="headerlink" title="5,    :nth-of-type（）"></a>5,    :nth-of-type（）</h3><p>:nth-of-type类似于:nth-child，不同的是他只计算选择器中指定的那个元素,其实我们前面的实例都是指定了具体的元素，这个选择器主要对用来定位元素中包含了好多不同类型的元素是很有用处<br>例如：.con下面有好多p元素，li元素，img元素等，但我只选择img元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.con</span> <span class="selector-tag">img</span><span class="selector-pseudo">:nth-of-type(1)</span>&#123;<span class="attribute">height</span>:<span class="number">20px</span>;&#125;</div></pre></td></tr></table></figure></p>
+<p>其实这种使用和:nth-child使用是一样的，也可以使用:nth-child的那些表达式和使用方法，唯一不同的是这种指定了元素的类型而以。<div style="color:red">IE6-8和FF3.0-浏览器不支持</div></p>
+<h3 id="6-nth-last-of-type（）"><a href="#6-nth-last-of-type（）" class="headerlink" title="6,    :nth-last-of-type（）"></a>6,    :nth-last-of-type（）</h3><p>它和前面的:nth-last-child一样使用，只是他指定了元素的类型而以。</p>
+<div style="color:red">IE6-8和FF3.0-浏览器不支持</div>
+
+<h3 id="7-first-of-type和-last-of-type"><a href="#7-first-of-type和-last-of-type" class="headerlink" title="7,    :first-of-type和:last-of-type"></a>7,    :first-of-type和:last-of-type</h3><p>:first-of-type和:last-of-type这两个选择器就类似于:first-child和:last-child;不同之处就是指定了元素的类型。</p>
+<div style="color:red">IE6-8和FF3.0-浏览器不支持</div>
+
+<h3 id="8-only-chlid和-only-of-type"><a href="#8-only-chlid和-only-of-type" class="headerlink" title="8,    :only-chlid和:only-of-type"></a>8,    :only-chlid和:only-of-type</h3><p>“:only-child”表示的是一个元素是它的父元素的唯一一个子元素。<br>:only-of-type是表示一个元素他有很多个子元素，而其中只有一个子元素是唯一的，那么我们使用这种选择方法就可以选择中这个唯一的子元素</p>
+<div style="color:red">IE6-8浏览器不支持:only-child选择器；IE6-8和FF3.0-浏览器不支持:only-of-type选择器。<br></div>
+
+<h3 id="9-empty"><a href="#9-empty" class="headerlink" title="9,    :empty"></a>9,    :empty</h3><p>:empty是用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，哪怕是一个空格.</p>
+<div style="color:red">IE6-8浏览器不支持</div>
+
+<h2 id="三，否定选择器（-not）"><a href="#三，否定选择器（-not）" class="headerlink" title="三，否定选择器（:not）"></a>三，否定选择器（:not）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[type="submit"]</span>) &#123;<span class="attribute">border</span>: <span class="number">1px</span> solid red;&#125;</div></pre></td></tr></table></figure>
+<p>给所有的input加边框除submit类型的除外，否定选择器 :not()，可以让你定位不匹配该选择器的元素。</p>
+<div style="color:red">IE6-8浏览器不支持</div>
+
+<h2 id="四，伪元素"><a href="#四，伪元素" class="headerlink" title="四，伪元素"></a>四，伪元素</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">::first-line</span>选择元素的第一行，比如说改变每个段落的第一行文本的样式</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span>&#123; <span class="attribute">background-color</span>:blue; &#125;</div><div class="line"><span class="selector-pseudo">::first-letter</span>选择文本块的第一个字母</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span>&#123; <span class="attribute">font-size</span>:<span class="number">30px</span>; &#125;</div><div class="line"><span class="selector-pseudo">::before</span>和<span class="selector-pseudo">::after</span>这两个主要用来给元素的前面或后面插入内容。</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/02/css选择器—属性选择器/" rel="next" title="css选择器—属性选择器">
+                <i class="fa fa-chevron-left"></i> css选择器—属性选择器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/09/inline-block/" rel="prev" title="inline-block">
+                inline-block <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xiaoshuang.meng" />
+          <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
+          <p class="site-description motion-element" itemprop="description">页面重构人员，日常前端记录</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#伪类选择器"><span class="nav-number">1.</span> <span class="nav-text">伪类选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，动态伪类"><span class="nav-number">1.1.</span> <span class="nav-text">一，动态伪类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态伪类包含两种"><span class="nav-number">1.1.1.</span> <span class="nav-text">动态伪类包含两种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，UI元素状态伪类"><span class="nav-number">1.2.</span> <span class="nav-text">二，UI元素状态伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，css3的-nth选择器"><span class="nav-number">1.3.</span> <span class="nav-text">三，css3的:nth选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-first-child"><span class="nav-number">1.3.1.</span> <span class="nav-text">1,    :first-child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-last-child"><span class="nav-number">1.3.2.</span> <span class="nav-text">2,    :last-child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-nth-child（）"><span class="nav-number">1.3.3.</span> <span class="nav-text">3,    :nth-child（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-nth-last-child（）"><span class="nav-number">1.3.4.</span> <span class="nav-text">4,    :nth-last-child（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-nth-of-type（）"><span class="nav-number">1.3.5.</span> <span class="nav-text">5,    :nth-of-type（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-nth-last-of-type（）"><span class="nav-number">1.3.6.</span> <span class="nav-text">6,    :nth-last-of-type（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-first-of-type和-last-of-type"><span class="nav-number">1.3.7.</span> <span class="nav-text">7,    :first-of-type和:last-of-type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-only-chlid和-only-of-type"><span class="nav-number">1.3.8.</span> <span class="nav-text">8,    :only-chlid和:only-of-type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-empty"><span class="nav-number">1.3.9.</span> <span class="nav-text">9,    :empty</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，否定选择器（-not）"><span class="nav-number">1.4.</span> <span class="nav-text">三，否定选择器（:not）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，伪元素"><span class="nav-number">1.5.</span> <span class="nav-text">四，伪元素</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoshuang.meng</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

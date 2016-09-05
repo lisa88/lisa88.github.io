@@ -1,0 +1,585 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值
+属性选择器IE6不支持属性选择器
+1，E【attr】12.main p[class]&amp;#123; color: red; &amp;#125;.main p[class][title]&amp;#123; color:blue; &amp;#125;
+选择.m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css选择器—属性选择器">
+<meta property="og:url" content="http://yoursite.com/2015/11/02/css选择器—属性选择器/index.html">
+<meta property="og:site_name" content="直到那一天">
+<meta property="og:description" content="属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值
+属性选择器IE6不支持属性选择器
+1，E【attr】12.main p[class]&amp;#123; color: red; &amp;#125;.main p[class][title]&amp;#123; color:blue; &amp;#125;
+选择.m">
+<meta property="og:updated_time" content="2016-02-25T03:58:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css选择器—属性选择器">
+<meta name="twitter:description" content="属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值
+属性选择器IE6不支持属性选择器
+1，E【attr】12.main p[class]&amp;#123; color: red; &amp;#125;.main p[class][title]&amp;#123; color:blue; &amp;#125;
+选择.m">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> css选择器—属性选择器 | 直到那一天 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">直到那一天</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">ddd</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css选择器—属性选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-11-02T19:02:22+08:00" content="2015-11-02">
+              2015-11-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
+<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p><span style="color:red">IE6不支持属性选择器</span></p>
+<h2 id="1，E【attr】"><a href="#1，E【attr】" class="headerlink" title="1，E【attr】"></a>1，E【attr】</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span><span class="selector-attr">[class]</span>&#123; <span class="attribute">color</span>: red; &#125;</div><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span><span class="selector-attr">[class]</span><span class="selector-attr">[title]</span>&#123; <span class="attribute">color</span>:blue; &#125;</div></pre></td></tr></table></figure>
+<p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素</p>
+<a id="more"></a>
+<h2 id="2，E【attr-”value”】"><a href="#2，E【attr-”value”】" class="headerlink" title="2，E【attr=”value”】"></a>2，E【attr=”value”】</h2><p>E[attr=”value”]是指定了属性值“value”<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span><span class="selector-attr">[class="text"]</span>&#123;<span class="attribute">background-color</span>: black;&#125;</div></pre></td></tr></table></figure></p>
+<p>选择.main下面class=text的p元素。<br>属性和属性值必须完全匹配，特别是对于属性值是词列表的形式时<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">""</span> class=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/a&gt;</div><div class="line"><span class="selector-tag">a</span>[class=<span class="string">"links"</span>]&#123; <span class="attribute">color</span>:red; &#125; 无法匹配，属性值不能完全匹配</div><div class="line"><span class="selector-tag">a</span>[class=<span class="string">"linkes item"</span>]&#123; <span class="attribute">color</span>:red; &#125; 正确匹配</div></pre></td></tr></table></figure></p>
+<h2 id="3，E【attr-”value”】"><a href="#3，E【attr-”value”】" class="headerlink" title="3，E【attr~=”value”】"></a>3，E【attr~=”value”】</h2><p>这种属性选择器是属性值是一个或多个词列表，如果是列表时，他们需要用空格隔开，只要属性值中有一个value相匹配就可以选中该元素。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">""</span> class=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/a&gt;</div><div class="line"><span class="selector-tag">a</span>[class~=<span class="string">"links"</span>]&#123; <span class="attribute">color</span>:red; &#125; 可以匹配</div></pre></td></tr></table></figure></p>
+<p>E[attr=”value”]和E[attr~=”value”]之间的区别，有波浪（〜）时属性值有value就可以匹配，没有波浪（〜）时属性值要完全是value时才匹配。</p>
+<h2 id="4，E【attr-”value”】"><a href="#4，E【attr-”value”】" class="headerlink" title="4，E【attr^=”value”】"></a>4，E【attr^=”value”】</h2><p>选择attr属性值以”value”开头的所有元素<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">""</span> class=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/a&gt;</div><div class="line"><span class="selector-tag">a</span>[title^=<span class="string">"好"</span>]&#123; <span class="attribute">color</span>:red; &#125; a元素title以好开头的元素</div></pre></td></tr></table></figure></p>
+<h2 id="5，E【attr-”value”】"><a href="#5，E【attr-”value”】" class="headerlink" title="5，E【attr$=”value”】"></a>5，E【attr$=”value”】</h2><p>选择元素attr属性，并且他的属性值是以value结尾的<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"http://source.com/logo.png"</span> title=<span class="string">"logo"</span> /&gt;</div><div class="line"><span class="selector-tag">img</span>[src$=<span class="string">"png"</span>]&#123; <span class="attribute">height</span>:<span class="number">10px</span>;&#125; 选择img有src属性，属性值以png结尾的</div></pre></td></tr></table></figure></p>
+<h2 id="6，E【attr-”value”】"><a href="#6，E【attr-”value”】" class="headerlink" title="6，E【attr*=”value”】"></a>6，E【attr*=”value”】</h2><p>选择attr属性值中包含子串”value”的所有元素。只要你所选择的属性，其属性值中有这个”value”值都将被选中。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"http://source.com/logo.png"</span> title=<span class="string">"logo"</span> /&gt;</div><div class="line"><span class="selector-tag">img</span>[src*=<span class="string">"source"</span>]&#123; <span class="attribute">height</span>:<span class="number">10px</span>;&#125; 选择img有src属性，属性值中有source就可以被选中</div></pre></td></tr></table></figure></p>
+<h2 id="7，E【attr-”value”】"><a href="#7，E【attr-”value”】" class="headerlink" title="7，E【attr|=”value”】"></a>7，E【attr|=”value”】</h2><p>选择attr属性值等于value或以value-开头的所有元素<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"http://source.com/logo.png"</span> <span class="built_in">title</span>=<span class="string">"logo"</span> /&gt;</div><div class="line">&lt;img src=<span class="string">"http://source.com/logo.png"</span> <span class="built_in">title</span>=<span class="string">"logo-red"</span> /&gt;</div><div class="line">img[<span class="built_in">title</span>|=<span class="string">"logo"</span>]&#123; <span class="built_in">height</span>:10px;&#125; 选择img有<span class="built_in">title</span>属性，属性值是logo或是以logo-开头的</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/02/css选择器—基本选择器/" rel="next" title="css选择器—基本选择器">
+                <i class="fa fa-chevron-left"></i> css选择器—基本选择器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/03/css选择器—伪类选择器/" rel="prev" title="css选择器—伪类选择器">
+                css选择器—伪类选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xiaoshuang.meng" />
+          <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
+          <p class="site-description motion-element" itemprop="description">页面重构人员，日常前端记录</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#属性选择器"><span class="nav-number">1.</span> <span class="nav-text">属性选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1，E【attr】"><span class="nav-number">1.1.</span> <span class="nav-text">1，E【attr】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2，E【attr-”value”】"><span class="nav-number">1.2.</span> <span class="nav-text">2，E【attr=”value”】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3，E【attr-”value”】"><span class="nav-number">1.3.</span> <span class="nav-text">3，E【attr~=”value”】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4，E【attr-”value”】"><span class="nav-number">1.4.</span> <span class="nav-text">4，E【attr^=”value”】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5，E【attr-”value”】"><span class="nav-number">1.5.</span> <span class="nav-text">5，E【attr$=”value”】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6，E【attr-”value”】"><span class="nav-number">1.6.</span> <span class="nav-text">6，E【attr*=”value”】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7，E【attr-”value”】"><span class="nav-number">1.7.</span> <span class="nav-text">7，E【attr|=”value”】</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoshuang.meng</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
