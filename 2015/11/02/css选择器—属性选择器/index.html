@@ -11,13 +11,13 @@
 选择.m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css选择器—属性选择器">
-<meta property="og:url" content="http://yoursite.com/2015/11/02/d/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/11/02/css选择器—属性选择器/index.html">
 <meta property="og:site_name" content="走路去纽约">
 <meta property="og:description" content="属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值
 属性选择器IE6不支持属性选择器
 1，E【attr】12.main p[class]&amp;#123; color: red; &amp;#125;.main p[class][title]&amp;#123; color:blue; &amp;#125;
 选择.m">
-<meta property="og:updated_time" content="2015-11-03T09:04:16.000Z">
+<meta property="og:updated_time" content="2016-02-25T03:58:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css选择器—属性选择器">
 <meta name="twitter:description" content="属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值
@@ -73,12 +73,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-d" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-css选择器—属性选择器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/02/d/" class="article-date">
+    <a href="/2015/11/02/css选择器—属性选择器/" class="article-date">
   <time datetime="2015-11-02T11:02:22.000Z" itemprop="datePublished">2015-11-02</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -98,12 +102,12 @@
         <p>属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
 <h1 id="属性选择器">属性选择器</h1><p><span style="color:red">IE6不支持属性选择器</span></p>
 <h2 id="1，E【attr】">1，E【attr】</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>; &#125;</span></span><br><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="attr_selector">[title]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>; &#125;</span></span><br></pre></td></tr></table></figure>
-<p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素    </p>
+<p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素</p>
 <a id="more"></a>
 <h2 id="2，E【attr=”value”】">2，E【attr=”value”】</h2><p>E[attr=”value”]是指定了属性值“value”<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class="text"]</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> black</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>选择.main下面class=text的p元素。<br>属性和属性值必须完全匹配，特别是对于属性值是词列表的形式时<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">""</span> <span class="keyword">class</span>=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/a&gt;</span><br><span class="line">a[<span class="keyword">class</span>=<span class="string">"links"</span>]&#123; color:red; &#125; 无法匹配，属性值不能完全匹配</span><br><span class="line">a[<span class="keyword">class</span>=<span class="string">"linkes item"</span>]&#123; color:red; &#125; 正确匹配</span><br></pre></td></tr></table></figure></p>
 <h2 id="3，E【attr~=”value”】">3，E【attr~=”value”】</h2><p>这种属性选择器是属性值是一个或多个词列表，如果是列表时，他们需要用空格隔开，只要属性值中有一个value相匹配就可以选中该元素。<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="literal">a</span> href=<span class="string">""</span> class=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/<span class="literal">a</span>&gt;</span><br><span class="line"><span class="literal">a</span>[class~=<span class="string">"links"</span>]&#123; color:red<span class="comment">; &#125; 可以匹配</span></span><br></pre></td></tr></table></figure></p>
-<p>E[attr=”value”]和E[attr~=”value”]之间的区别，有波浪（〜）时属性值有value就可以匹配，没有波浪（〜）时属性值要完全是value时才匹配。    </p>
+<p>E[attr=”value”]和E[attr~=”value”]之间的区别，有波浪（〜）时属性值有value就可以匹配，没有波浪（〜）时属性值要完全是value时才匹配。</p>
 <h2 id="4，E【attr^=”value”】">4，E【attr^=”value”】</h2><p>选择attr属性值以”value”开头的所有元素<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="literal">a</span> href=<span class="string">""</span> class=<span class="string">"links item"</span> title=<span class="string">"好人一生平安"</span>&gt;好人一生平安&lt;/<span class="literal">a</span>&gt;</span><br><span class="line"><span class="literal">a</span>[title^=<span class="string">"好"</span>]&#123; color:red<span class="comment">; &#125; a元素title以好开头的元素</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="5，E【attr$=”value”】">5，E【attr$=”value”】</h2><p>选择元素attr属性，并且他的属性值是以value结尾的<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"http://source.com/logo.png"</span> title=<span class="string">"logo"</span> /&gt;</span><br><span class="line">img[src$=<span class="string">"png"</span>]&#123; height:<span class="number">10</span>px;&#125; 选择img有src属性，属性值以png结尾的</span><br></pre></td></tr></table></figure></p>
 <h2 id="6，E【attr*=”value”】">6，E【attr*=”value”】</h2><p>选择attr属性值中包含子串”value”的所有元素。只要你所选择的属性，其属性值中有这个”value”值都将被选中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"http://source.com/logo.png"</span> title=<span class="string">"logo"</span> /&gt;</span><br><span class="line">img[src*=<span class="string">"source"</span>]&#123; height:<span class="number">10</span>px;&#125; 选择img有src属性，属性值中有<span class="built_in">source</span>就可以被选中</span><br></pre></td></tr></table></figure></p>
@@ -112,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/d/" data-id="cil1nhelg0006tw9g67k3y46x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/css选择器—属性选择器/" data-id="cila9hi1q000ek79g1rmdaqum" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +135,7 @@
     </a>
   
   
-    <a href="/2015/11/02/test/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/02/css选择器—基本选择器/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">css选择器—基本选择器</div>
     </a>
@@ -152,11 +156,15 @@
       <ul>
         
           <li>
+            <a href="/2016/03/02/git/">git</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/24/sass基础用法二/">sass基础用法二</a>
           </li>
         
           <li>
-            <a href="/2016/02/22/sass基本/">sass基础用法一</a>
+            <a href="/2016/02/22/sass基础用法一/">sass基础用法一</a>
           </li>
         
           <li>
@@ -172,14 +180,23 @@
           </li>
         
           <li>
-            <a href="/2015/11/02/d/">css选择器—属性选择器</a>
+            <a href="/2015/11/02/css选择器—属性选择器/">css选择器—属性选择器</a>
           </li>
         
           <li>
-            <a href="/2015/11/02/test/">css选择器—基本选择器</a>
+            <a href="/2015/11/02/css选择器—基本选择器/">css选择器—基本选择器</a>
           </li>
         
       </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -189,12 +206,10 @@
     
   
     
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 

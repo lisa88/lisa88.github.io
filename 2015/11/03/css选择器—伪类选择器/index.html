@@ -25,7 +25,7 @@
 对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。
  
 二，UI元素状态伪类 :enabled,:disabled,:c">
-<meta property="og:updated_time" content="2015-11-03T09:03:23.000Z">
+<meta property="og:updated_time" content="2016-02-25T08:02:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css选择器—伪类选择器">
 <meta name="twitter:description" content="伪类选择器一，动态伪类动态伪类包含两种(只有当用户和网站交互的时候才能体现出来)
@@ -91,6 +91,10 @@
   <time datetime="2015-11-03T03:47:01.000Z" itemprop="datePublished">2015-11-03</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -122,7 +126,7 @@
 <h3 id="2,_:last-child">2,    :last-child</h3><p> :last-child是用来选择某个元素的最后一个子元素<br>  <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">li</span>&gt;1,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">li</span>&gt;2,<span class="keyword">list</span>&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">.<span class="keyword">list</span> <span class="keyword">li</span>:first-child&#123; background-color: red; &#125;</span><br></pre></td></tr></table></figure></p>
 <p> .list的最后一个子元素li背景变红</p>
 <h3 id="3,_:nth-child（）">3,    :nth-child（）</h3><p>  :nth-child()可以选择某个的一个或多个特定的子元素<br>  <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:nth-child</span>(length);<span class="comment">/*参数是具体数字*/</span></span><br><span class="line"><span class="pseudo">:nth-child</span>(n);<span class="comment">/*参数是n,n从0开始计算*/</span></span><br><span class="line"><span class="pseudo">:nth-child</span>(n*length)<span class="comment">/*n的倍数选择，n从0开始算*/</span></span><br><span class="line"><span class="pseudo">:nth-child</span>(n+length);<span class="comment">/*选择大于length后面的元素*/</span></span><br><span class="line"><span class="pseudo">:nth-child</span>(-n+length)<span class="comment">/*选择小于length前面的元素*/</span></span><br><span class="line"><span class="pseudo">:nth-child</span>(n*length+<span class="number">1</span>);<span class="comment">/*表示隔几选一*/</span></span><br></pre></td></tr></table></figure></p>
-<p>  :nth-child(n)其中n是一个简单的表达式，n的取值从0开始计算，到什么时候结束不知道，如果直接这样写，将会选中所有子元素。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n     选择所有子元素  --&gt;	<span class="number">2</span>n   选择n的<span class="number">2</span>倍数所有偶数子元素 </span><br><span class="line">n=<span class="number">0</span>   没有选择元素	--&gt;    <span class="number">2</span>n=<span class="number">0</span>  没有选中任何元素</span><br><span class="line">n=<span class="number">1</span>   选择第一个子元素--&gt;    <span class="number">2</span>n=<span class="number">2</span>  选择了第二个li</span><br><span class="line">n=<span class="number">2</span>   选择第二个子元素--&gt;    <span class="number">2</span>n=<span class="number">4</span>  选择了地四个li</span><br><span class="line"><span class="symbol">:nth-chlid</span>(<span class="number">2</span>n) 等于 <span class="symbol">:nth-chlid</span>(even)选择偶数</span><br><span class="line"><span class="symbol">:nth-child</span>(<span class="number">2</span>n-<span class="number">1</span>) 等于 <span class="symbol">:nth-child</span>(odd)选择奇数</span><br></pre></td></tr></table></figure></p>
+<p>  :nth-child(n)其中n是一个简单的表达式，n的取值从0开始计算，到什么时候结束不知道，如果直接这样写，将会选中所有子元素。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n     选择所有子元素  --&gt;	<span class="number">2</span>n   选择n的<span class="number">2</span>倍数所有偶数子元素</span><br><span class="line">n=<span class="number">0</span>   没有选择元素	--&gt;    <span class="number">2</span>n=<span class="number">0</span>  没有选中任何元素</span><br><span class="line">n=<span class="number">1</span>   选择第一个子元素--&gt;    <span class="number">2</span>n=<span class="number">2</span>  选择了第二个li</span><br><span class="line">n=<span class="number">2</span>   选择第二个子元素--&gt;    <span class="number">2</span>n=<span class="number">4</span>  选择了地四个li</span><br><span class="line"><span class="symbol">:nth-chlid</span>(<span class="number">2</span>n) 等于 <span class="symbol">:nth-chlid</span>(even)选择偶数</span><br><span class="line"><span class="symbol">:nth-child</span>(<span class="number">2</span>n-<span class="number">1</span>) 等于 <span class="symbol">:nth-child</span>(odd)选择奇数</span><br></pre></td></tr></table></figure></p>
 <p><span style="color:red">IE6-8和FF3-浏览器不支持”:nth-child”选择器。 </span></p>
 <h3 id="4,_:nth-last-child（）">4,    :nth-last-child（）</h3><p>:nth-last-child 从最后一个元素开始算，来选择特定元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">li</span><span class="pseudo">:nth-last-child(3)</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span></span>&#125;</span><br><span class="line">倒数第三个<span class="tag">li</span>字体颜色是红色</span><br></pre></td></tr></table></figure></p>
 <p>:nth-last-child(1) 等于 :last-child<br>:nth-last-child()  可以使用表达式来选择特定元素<br>“:nth-child()”是从元素的第一个开始计算，而“:nth-last-child()”是从元素的最后一个开始计算，他们的计算方法都是一样的。</p>
@@ -143,14 +147,14 @@
 <div style="color:red">IE6-8浏览器不支持</div>
 
 <h2 id="三，否定选择器（:not）">三，否定选择器（:not）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="pseudo">:not(</span><span class="attr_selector">[type="submit"]</span>) <span class="rules">&#123;<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid red</span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
-<p>给所有的input加边框除submit类型的除外，否定选择器 :not()，可以让你定位不匹配该选择器的元素。 </p>
+<p>给所有的input加边框除submit类型的除外，否定选择器 :not()，可以让你定位不匹配该选择器的元素。</p>
 <div style="color:red">IE6-8浏览器不支持</div>
 
 <h2 id="四，伪元素">四，伪元素</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">::first-line</span>选择元素的第一行，比如说改变每个段落的第一行文本的样式</span><br><span class="line"><span class="tag">p</span><span class="pseudo">::first-line</span><span class="rules">&#123; <span class="rule"><span class="attribute">background-color</span>:<span class="value">blue</span></span>; &#125;</span></span><br><span class="line"><span class="pseudo">::first-letter</span>选择文本块的第一个字母</span><br><span class="line"><span class="tag">p</span><span class="pseudo">::first-letter</span><span class="rules">&#123; <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">30px</span></span></span>; &#125;</span></span><br><span class="line"><span class="pseudo">::before</span>和<span class="pseudo">::after</span>这两个主要用来给元素的前面或后面插入内容。</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cil1nhelk0007tw9gylkn9hd5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cila9hi130000k79gs0rxyjnr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -169,7 +173,7 @@
     </a>
   
   
-    <a href="/2015/11/02/d/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/02/css选择器—属性选择器/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">css选择器—属性选择器</div>
     </a>
@@ -190,11 +194,15 @@
       <ul>
         
           <li>
+            <a href="/2016/03/02/git/">git</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/24/sass基础用法二/">sass基础用法二</a>
           </li>
         
           <li>
-            <a href="/2016/02/22/sass基本/">sass基础用法一</a>
+            <a href="/2016/02/22/sass基础用法一/">sass基础用法一</a>
           </li>
         
           <li>
@@ -210,14 +218,23 @@
           </li>
         
           <li>
-            <a href="/2015/11/02/d/">css选择器—属性选择器</a>
+            <a href="/2015/11/02/css选择器—属性选择器/">css选择器—属性选择器</a>
           </li>
         
           <li>
-            <a href="/2015/11/02/test/">css选择器—基本选择器</a>
+            <a href="/2015/11/02/css选择器—基本选择器/">css选择器—基本选择器</a>
           </li>
         
       </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -227,12 +244,10 @@
     
   
     
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
