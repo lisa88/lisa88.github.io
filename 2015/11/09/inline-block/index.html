@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>inline-block | 走路去纽约</title>
+  <title>inline-block | 直到那一天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一直想写一结篇关于inline-block的总结,但一直不知道如何下笔可以写得更全面，具体一点。而且网上相关文章也可以一搜一大堆，不知写出来的还有没有必要，但最终还是觉得被inline-block坑过的人太多了，还是记录下来，留下一点纪念好一点。
 到底什么是 inline-blockinline-block 后的元素创建了一个行级的块容器，该元素内部（内容）被格式化成一个块元素，同时元素本身则被格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="inline-block">
 <meta property="og:url" content="http://yoursite.com/2015/11/09/inline-block/index.html">
-<meta property="og:site_name" content="走路去纽约">
+<meta property="og:site_name" content="直到那一天">
 <meta property="og:description" content="一直想写一结篇关于inline-block的总结,但一直不知道如何下笔可以写得更全面，具体一点。而且网上相关文章也可以一搜一大堆，不知写出来的还有没有必要，但最终还是觉得被inline-block坑过的人太多了，还是记录下来，留下一点纪念好一点。
 到底什么是 inline-blockinline-block 后的元素创建了一个行级的块容器，该元素内部（内容）被格式化成一个块元素，同时元素本身则被格">
 <meta property="og:image" content="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png">
@@ -23,14 +23,15 @@
 <meta name="twitter:title" content="inline-block">
 <meta name="twitter:description" content="一直想写一结篇关于inline-block的总结,但一直不知道如何下笔可以写得更全面，具体一点。而且网上相关文章也可以一搜一大堆，不知写出来的还有没有必要，但最终还是觉得被inline-block坑过的人太多了，还是记录下来，留下一点纪念好一点。
 到底什么是 inline-blockinline-block 后的元素创建了一个行级的块容器，该元素内部（内容）被格式化成一个块元素，同时元素本身则被格">
+<meta name="twitter:image" content="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png">
   
-    <link rel="alternative" href="/atom.xml" title="走路去纽约" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="直到那一天" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -42,11 +43,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">走路去纽约</a>
+        <a href="/" id="logo">直到那一天</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">突然很想不要飞 想走路去纽约 看看这一路我曾经忽略的一切</a>
+          <a href="/" id="subtitle">忍别离·不忍却要别离·托鸿雁南去·不知此心何寄</a>
         </h2>
       
     </div>
@@ -106,13 +107,13 @@
 <ul>
 <li>1）inline元素display:inline-block<br><img src="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png"></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.a-inline</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a-inline</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。<br><a id="more"></a></p>
 <ul>
 <li>2)block元素的display:inline-block<br><img src="http://img02.taobaocdn.com/tps/i2/T1B5rEXXNdXXau2DD4-486-217.png"></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.li-block</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>ie6中的block元素即使触发了haslayout也不具有inline-block元素不换行的特性，想要block元素支持inline-block元素的特性，可以这样做<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.li-block</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value">inline</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.li-block</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ie6中的block元素即使触发了haslayout也不具有inline-block元素不换行的特性，想要block元素支持inline-block元素的特性，可以这样做<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.li-block</span>&#123;</div><div class="line">  <span class="attribute">display</span>:inline;</div><div class="line">  <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <p> 首先让block元素转化为inline元素，强制其不换行，然后通过zoom:1触发haslayout,使基可以设置宽高。<br><img src="http://img03.taobaocdn.com/tps/i3/T1vibEXcheXXbfe2f.-517-91.png"></p>
 <p>  <span style="color:red">    总结：现代浏览器都支持display:inline-block,ie6,7的 inline元素也可以达到，ie6.7的black元素需要设置display：inline；zoom:1;</span><br>  <span style="color:green; font-weight:bold;"><br>  ie6,7并不是不支持inline-block,只是block元素需要做一些处理来达到inline-block的效果。<br>  </span></p>
 <h2 id="display:inline-block后的元素为什么会产生水平空隙？">display:inline-block后的元素为什么会产生水平空隙？</h2><ul>
@@ -129,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cila9hi1k0008k79ga3s40sdy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cispgga3e00071l9g9x3p087r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +210,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -252,11 +253,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

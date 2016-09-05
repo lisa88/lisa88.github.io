@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>走路去纽约</title>
+  <title>直到那一天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="页面重构人员，日常前端记录">
 <meta property="og:type" content="website">
-<meta property="og:title" content="走路去纽约">
+<meta property="og:title" content="直到那一天">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="走路去纽约">
+<meta property="og:site_name" content="直到那一天">
 <meta property="og:description" content="页面重构人员，日常前端记录">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="走路去纽约">
+<meta name="twitter:title" content="直到那一天">
 <meta name="twitter:description" content="页面重构人员，日常前端记录">
   
-    <link rel="alternative" href="/atom.xml" title="走路去纽约" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="直到那一天" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -33,11 +33,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">走路去纽约</a>
+        <a href="/" id="logo">直到那一天</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">突然很想不要飞 想走路去纽约 看看这一路我曾经忽略的一切</a>
+          <a href="/" id="subtitle">忍别离·不忍却要别离·托鸿雁南去·不知此心何寄</a>
         </h2>
       
     </div>
@@ -71,6 +71,10 @@
   <time datetime="2016-03-02T03:02:42.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -87,11 +91,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="git是分布式版本控制系统。">git是分布式版本控制系统。</h3><p><strong>  版本控制是指在开发的过程中，能自动记录每次不同的文件改动，确保由不同人所编辑的同一档案都得到更新。</strong><br><strong>    版本控制的作用是追踪文件的变化，为什么需要版本控制系统？就是当你出错了，可以很容易地找回没出错时的状态。</strong></p>
+<hr>
+<p><strong>  分布式版本控制就是每个人都可以创建一个独立的代码仓库用于管理，各种版本控制的操作都可以在本地完成。每个人修改的代码都可以推送合并到另外一个代码仓库中。</strong></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/02/git/" data-id="cila9hi1m000ak79gzjck820r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/02/git/" data-id="cispgga3a00051l9gqfrz5oeb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,8 +139,8 @@
 <p><p>mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常要用到多个元素中，这样就需要重复的写多次。在sass中，可以为这些公用的CSS样式定义一个mixin，然后在CSS需要使用这些样式的地方直接调用定义好的mixin。这是一个非常有用的特性，mixin被作一个公认的选择器，还可以在Mixins中定义变量或者默认参数。</p></p>
 <p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p></p>
 <p><h3>一，mixin参数类型</h3></p>
-<p><h4>1，无参数的mixin</h4><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@mixin</span> title-style &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">.test&#123;</span><br><span class="line">	<span class="variable">@include</span> title-style;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><h4>2，一个参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> title-style</span>(<span class="variable">$color</span>) &#123;</span></span><br><span class="line">    <span class="attribute">margin</span><span class="value">: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</span></span><br><span class="line">    <span class="attribute">font-size</span><span class="value">: <span class="number">20px</span>;</span></span><br><span class="line">    <span class="attribute">font-weight</span><span class="value">: bold;</span></span><br><span class="line">    <span class="attribute">text-transform</span><span class="value">: uppercase;</span></span><br><span class="line">    <span class="attribute">color</span><span class="value">: <span class="variable">$color</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="class">.test</span>&#123;</span><br><span class="line">	<span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> title-style</span>(<span class="hexcolor">#ccc</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><h4>1，无参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><h4>2，一个参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
             <a href="/2016/02/24/sass基础用法二/#more">查看更多</a>
@@ -142,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/sass基础用法二/" data-id="cila9hi1g0003k79glcys0qqd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/sass基础用法二/" data-id="cispgga3i000b1l9ggstjcg40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,8 +202,8 @@
 <p>    1，选择器嵌套是指从一个选择器中嵌套子选择器，来实现选择器的继承关系。</p>
 
 
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.header</span>&#123;</span><br><span class="line">	<span class="class">.logo</span>&#123;</span><br><span class="line">		<span class="attribute">display</span>: block;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class">.list</span>&#123;</span><br><span class="line">		<span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h3</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">font</span>:<span class="value">&#123;</span><br><span class="line">		size:<span class="number">26px</span></span></span>;</span><br><span class="line">	    <span class="rule"><span class="attribute">weight</span>:<span class="value">normal</span></span>;</span><br><span class="line">	    <span class="rule"><span class="attribute">family</span>:<span class="value">arial</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="tag">text</span>:<span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">transform</span>:<span class="value"> uppercase</span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">decoration</span>:<span class="value"> underline</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.m-detail</span>&#123;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-bd</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="class">.title</span>&#123;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="class">.link</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>: blue;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-hd</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">&amp;</span><span class="tag">-ft</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br></pre><br>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.header</span>&#123;</div><div class="line">	<span class="selector-class">.logo</span>&#123;</div><div class="line">		<span class="attribute">display</span>: block;</div><div class="line">	&#125;</div><div class="line">	<span class="selector-class">.list</span>&#123;</div><div class="line">		<span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h3</span>&#123;</div><div class="line">	<span class="attribute">font</span>:&#123;</div><div class="line">		size:<span class="number">26px</span>;</div><div class="line">	    <span class="attribute">weight</span>:normal;</div><div class="line">	    <span class="attribute">family</span>:arial;</div><div class="line">	&#125;</div><div class="line">	<span class="selector-tag">text</span>:&#123;</div><div class="line">		<span class="attribute">transform</span>: uppercase;</div><div class="line">		<span class="attribute">decoration</span>: underline;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.m-detail</span>&#123;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-bd</span>&#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">    <span class="selector-class">.title</span>&#123;</div><div class="line">      <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">      <span class="selector-class">.link</span>&#123;</div><div class="line">        <span class="attribute">color</span>: blue;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-hd</span>&#123;</div><div class="line">    <span class="attribute">color</span>: green;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-ft</span>&#123;</div><div class="line">    <span class="attribute">color</span>: black;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br></pre><br>
         
           <p class="article-more-link">
             <a href="/2016/02/22/sass基础用法一/#more">查看更多</a>
@@ -205,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/sass基础用法一/" data-id="cila9hi1j0006k79gvxqm59s9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/sass基础用法一/" data-id="cispgga3g00091l9gkiqrarlv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,9 +253,9 @@
 <p><strong>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）主轴的开始位置叫做main start,结束的位置叫做main end</strong><br><strong>项目在主轴方向的宽度和高度就是是主轴的尺寸。main size</strong><br><strong>项目在交叉轴方向的宽度或高度就是项目的交叉轴长度。corss size</strong></p>
 <p><img src="/images/flex-02.jpg" alt=""></p>
 <p><strong>flex-direction设置决定了主轴方向，侧轴就是主轴相对应的交叉轴</strong></p>
-<h2 id="伸缩容器的属性">伸缩容器的属性</h2><h3 id="flex-driection">flex-driection</h3><p><strong>    这个主要是用来创建主轴，从而定义了伸缩容器的方向</strong><br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flex-<span class="built_in">direction</span>:row | row-<span class="built_in">reverse</span> | column | column-<span class="built_in">reverse</span></span><br><span class="line">row(默认值)：主轴为水平方向，起点在左端</span><br><span class="line">row-<span class="built_in">reverse</span>: 主轴为水平方向，起点在右端</span><br><span class="line">column: 主轴为垂直方向，起点在上沿</span><br><span class="line">column-<span class="built_in">reverse</span>: 主轴为垂直方向，起点在下沿</span><br></pre></td></tr></table></figure></p>
+<h2 id="伸缩容器的属性">伸缩容器的属性</h2><h3 id="flex-driection">flex-driection</h3><p><strong>    这个主要是用来创建主轴，从而定义了伸缩容器的方向</strong><br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">flex-direction:<span class="built_in">row</span> | <span class="built_in">row</span>-<span class="built_in">reverse</span> | column | column-<span class="built_in">reverse</span></div><div class="line"><span class="built_in">row</span>(默认值)：主轴为水平方向，起点在左端</div><div class="line"><span class="built_in">row</span>-<span class="built_in">reverse</span>: 主轴为水平方向，起点在右端</div><div class="line">column: 主轴为垂直方向，起点在上沿</div><div class="line">column-<span class="built_in">reverse</span>: 主轴为垂直方向，起点在下沿</div></pre></td></tr></table></figure></p>
 <p><img src="/images/flex-01.png" alt=""></p>
-<h3 id="flex-wrap">flex-wrap</h3><p><strong>这个主要用来定义伸缩容器里是单行还是多行显示,交叉轴的方向决定了新行堆放的方向</strong><br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-wrap</span>: <span class="string">nowrap | wrap | wrap-reverse</span></span><br><span class="line"><span class="attribute">nowrap</span>: <span class="string">（默认）不换行</span></span><br><span class="line"><span class="attribute">wrap</span>: <span class="string">换行，第一行在上方</span></span><br><span class="line"><span class="attribute">wrap-reverse</span>: <span class="string">换行，第一行在下方</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="flex-wrap">flex-wrap</h3><p><strong>这个主要用来定义伸缩容器里是单行还是多行显示,交叉轴的方向决定了新行堆放的方向</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">flex-<span class="keyword">wrap</span>: nowrap | <span class="keyword">wrap</span> | <span class="keyword">wrap</span>-reverse</div><div class="line">nowrap: （默认）不换行</div><div class="line"><span class="keyword">wrap</span>: 换行，第一行在上方</div><div class="line"><span class="keyword">wrap</span>-reverse: 换行，第一行在下方</div></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
             <a href="/2016/02/17/flex布局/#more">查看更多</a>
@@ -257,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cila9hi1o000bk79gui0klm92" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/17/flex布局/" data-id="cispgga3600041l9gkwzgd9ew" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +308,7 @@
 <ul>
 <li>1）inline元素display:inline-block<br><img src="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png" /></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.a-inline</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a-inline</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。<br>
         
           <p class="article-more-link">
@@ -311,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cila9hi1k0008k79ga3s40sdy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/09/inline-block/" data-id="cispgga3e00071l9g9x3p087r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,7 +361,7 @@
 </ul>
 <p><span style="color:red;">对于:hover在IE6下只有a元素支持，:active只有IE7-6不支持，:focus在IE6-7下不被支持。</p>
 <p> </span></p>
-<h2 id="二，UI元素状态伪类">二，UI元素状态伪类</h2><p> :enabled,:disabled,:checked UI元素状态伪类<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="attr_selector">[type="text"]</span><span class="pseudo">:disabled</span> <span class="rules">&#123;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#999</span></span></span>;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#fefefe</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="二，UI元素状态伪类">二，UI元素状态伪类</h2><p> :enabled,:disabled,:checked UI元素状态伪类<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span><span class="selector-pseudo">:disabled</span> &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#999</span>;<span class="attribute">background-color</span>: <span class="number">#fefefe</span>;&#125;</div></pre></td></tr></table></figure></p>
 <p> 禁用的文本框应用了一个不同的样式<br> <span style="color:red">IE6-8不支持”:checked”,”:enabled”,”:disabled”这三种选择器。</span></p>
         
           <p class="article-more-link">
@@ -364,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cila9hi130000k79gs0rxyjnr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/03/css选择器—伪类选择器/" data-id="cispgga2s00001l9go3r8d0o2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +409,7 @@
       
         <p>属性选择器的主要作用是对带有指定属性的HTML元素设置样式。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
 <h1 id="属性选择器">属性选择器</h1><p><span style="color:red">IE6不支持属性选择器</span></p>
-<h2 id="1，E【attr】">1，E【attr】</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>; &#125;</span></span><br><span class="line"><span class="class">.main</span> <span class="tag">p</span><span class="attr_selector">[class]</span><span class="attr_selector">[title]</span><span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>; &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1，E【attr】">1，E【attr】</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span><span class="selector-attr">[class]</span>&#123; <span class="attribute">color</span>: red; &#125;</div><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span><span class="selector-attr">[class]</span><span class="selector-attr">[title]</span>&#123; <span class="attribute">color</span>:blue; &#125;</div></pre></td></tr></table></figure>
 <p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素</p>
         
           <p class="article-more-link">
@@ -412,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/css选择器—属性选择器/" data-id="cila9hi1q000ek79g1rmdaqum" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/css选择器—属性选择器/" data-id="cispgga3400031l9g9eqc6wtr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,8 +456,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>要使用css对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器。<br>HTML页面中的元素就是通过CSS选择器进行控制的。</p>
-<h1 id="基本选择器">基本选择器</h1><h2 id="1,_通配符选择器（*）">1, 通配符选择器（*）</h2><p>通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.a</span> *<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="2,_元素选择器（E）">2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">15px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="基本选择器">基本选择器</h1><h2 id="1,_通配符选择器（*）">1, 通配符选择器（*）</h2><p>通配符选择器是用来选择所有元素，也可以选择某个元素下的所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.a</span> *&#123;</div><div class="line">    <span class="attribute">color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2,_元素选择器（E）">2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">15px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2015/11/02/css选择器—基本选择器/#more">查看更多</a>
@@ -459,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/css选择器—基本选择器/" data-id="cila9hi1u000gk79gjotk8259" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/css选择器—基本选择器/" data-id="cispgga2y00011l9g5o4kuh2b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -521,7 +528,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SASS/">SASS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -564,11 +571,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>
