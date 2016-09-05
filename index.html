@@ -84,15 +84,15 @@
 
 
 
-<meta name="description" content="页面重构人员，日常前端记录">
+<meta name="description" content="页面重构日常记录">
 <meta property="og:type" content="website">
-<meta property="og:title" content="直到那一天">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="直到那一天">
-<meta property="og:description" content="页面重构人员，日常前端记录">
+<meta property="og:title" content="在这里">
+<meta property="og:url" content="http://xiaoshuang.com/index.html">
+<meta property="og:site_name" content="在这里">
+<meta property="og:description" content="页面重构日常记录">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="直到那一天">
-<meta name="twitter:description" content="页面重构人员，日常前端记录">
+<meta name="twitter:title" content="在这里">
+<meta name="twitter:description" content="页面重构日常记录">
 
 
 
@@ -100,20 +100,20 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: 0,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
 
-  <title> 直到那一天 </title>
+  <title> 在这里 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -131,7 +131,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container one-collumn sidebar-position-right 
    page-home 
  ">
     <div class="headband"></div>
@@ -142,12 +142,11 @@
 
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">直到那一天</span>
+      <span class="site-title">在这里</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">ddd</p>
+  <p class="site-subtitle">无奈我和你，写不出结局，放遗憾的美丽停在这里</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -170,7 +169,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -180,17 +179,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
+            归档
           </a>
         </li>
       
@@ -246,7 +235,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-03-02T11:02:42+08:00" content="2016-03-02">
               2016-03-02
             </time>
@@ -258,7 +247,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index">
@@ -361,7 +350,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-02-24T10:47:23+08:00" content="2016-02-24">
               2016-02-24
             </time>
@@ -373,7 +362,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/SASS/" itemprop="url" rel="index">
@@ -414,12 +403,10 @@
 <p><h2>sass-mixin(混合宏)</h2></p>
 <p><p>mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，作为单独定义的模块，被很多选择器重复使用。平时在写样式时肯定碰到过，某段CSS样式经常要用到多个元素中，这样就需要重复的写多次。在sass中，可以为这些公用的CSS样式定义一个mixin，然后在CSS需要使用这些样式的地方直接调用定义好的mixin。这是一个非常有用的特性，mixin被作一个公认的选择器，还可以在Mixins中定义变量或者默认参数。</p></p>
 <p><p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p></p>
-<p><h3>一，mixin参数类型</h3></p>
-<p><h4>1，无参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><h4>2，一个参数的mixin</h4><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> title-style(<span class="variable">$color</span>) &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">text-transform</span>: uppercase;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="selector-class">.test</span>&#123;</div><div class="line">	@<span class="keyword">include</span> title-style(<span class="number">#ccc</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><h3>一，mixin参数类型</h3><br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/02/24/sass基础用法二/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -482,7 +469,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-02-22T15:02:58+08:00" content="2016-02-22">
               2016-02-22
             </time>
@@ -494,7 +481,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/SASS/" itemprop="url" rel="index">
@@ -538,21 +525,10 @@
 </ul>
 <p><strong>    为了让CSS更加简洁，适应性更强等，就给CSS加入了编程元素，叫做CSS预处理。<br>CSS预处理器的主要目标：提供CSS缺失的样式层复用机制，减少冗余代码，提高样式代码的可维护性。<br>今天介绍其中的一种css预处理器——sass    </strong></p>
 <h2 id="sass文件后缀名"><a href="#sass文件后缀名" class="headerlink" title="sass文件后缀名"></a>sass文件后缀名</h2><p><strong>好多人不知道sass与scss的关系是什么，明明每天说的是sass为什么文件的后缀名都是scss呢？其实scss是sass的新语法。</strong></p>
-<p><img src="/images/scss/01.jpg" alt=""></p>
-<p><h5>Sass有两种后缀名文件：</h5></p>
-<ul>
-<li>Sass文件是缩进式的写法，对格式要求比较严谨，末尾不能有分号，不使用大括号。Sass的老语法规则</li>
-<li>Scss后缀名就是和css文件格式差不多，要使用大括号和分号，方便阅读，不容易出错。 Sass的新语法规则</li>
-</ul>
-<h2 id="sass嵌套"><a href="#sass嵌套" class="headerlink" title="sass嵌套"></a>sass嵌套</h2><p><strong>    Sass最直观的与css的不同，就体现在视觉上的嵌套</strong><br><strong>    Sass中的嵌套有两种：</strong><br><img src="/images/scss/05.png" alt=""><br><strong>    这两种嵌套的目的都是一样的，减少代码量，增强代码的可读性</strong></p>
-<p>    1，选择器嵌套是指从一个选择器中嵌套子选择器，来实现选择器的继承关系。</p>
-
-
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.header</span>&#123;</div><div class="line">	<span class="selector-class">.logo</span>&#123;</div><div class="line">		<span class="attribute">display</span>: block;</div><div class="line">	&#125;</div><div class="line">	<span class="selector-class">.list</span>&#123;</div><div class="line">		<span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>    2，属性嵌套是指将带有相同前缀单词的属性提出来，作为一个公有的属性，嵌套进其他属性。(不推荐)</p><br><pre><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h3</span>&#123;</div><div class="line">	<span class="attribute">font</span>:&#123;</div><div class="line">		size:<span class="number">26px</span>;</div><div class="line">	    <span class="attribute">weight</span>:normal;</div><div class="line">	    <span class="attribute">family</span>:arial;</div><div class="line">	&#125;</div><div class="line">	<span class="selector-tag">text</span>:&#123;</div><div class="line">		<span class="attribute">transform</span>: uppercase;</div><div class="line">		<span class="attribute">decoration</span>: underline;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br></pre><br><br><p> 说到嵌套，有一个不得不说的就是连体符，要给一个元素赋予样式，就必须先取到这个元素，那就需要选择器，选择器是有很多种的，比如后代选择器，兄弟选择器等，如何在编写代码的时候，少写选择器，就能实现他们之间的依赖关系？这就需要与连体符结合。</p><br><strong>下面展示几个与连体符结合的事例：</strong><br><p style="color: red; margin: 0 0 -6px;">&amp;替代元素自身</p><br><p>下面的例子减少了选择器的重复书写</p><br><pre><br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.m-detail</span>&#123;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-bd</span>&#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">    <span class="selector-class">.title</span>&#123;</div><div class="line">      <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">      <span class="selector-class">.link</span>&#123;</div><div class="line">        <span class="attribute">color</span>: blue;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-hd</span>&#123;</div><div class="line">    <span class="attribute">color</span>: green;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-tag">-ft</span>&#123;</div><div class="line">    <span class="attribute">color</span>: black;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br></pre><br>
+<p><img src="/images/scss/01.jpg" alt=""><br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/02/22/sass基础用法一/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -615,7 +591,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-02-17T16:50:00+08:00" content="2016-02-17">
               2016-02-17
             </time>
@@ -627,7 +603,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/CSS3/" itemprop="url" rel="index">
@@ -665,16 +641,12 @@
       
         
           <p><strong>一个可以让你告别浮动，完美实现垂直水平居中的新特性–Flex布局</strong><br><strong>Flex是Flexible Box的缩写，意为“弹性布局”旨在提供一个更加有效的方式制定，调整和分布一个容器里的项目布局，即使他们的大小是未知或者是动态的。</strong><br><strong>Flex布局主要思想是让容器有能力让其子项目能够改变其宽度，高度（甚至顺序以）以最佳方式填充可用空间。（主要是为了适应所有类型的显示设备和屏幕大小）。Flex容器会使子项目（伸缩项目）扩展来填满可用空间，或缩小他们以防止溢出容器。</strong></p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>采用Flex布局的元素，称为Flex容器，简称“容器”，它的所有子元素自动成为容器成员，称为flex项目，简称“项目”</strong><br><strong>常规布局是基于块和内联流方向，而flex布局是基于flex-flow流</strong><br><img src="/images/flex-03.jpg" alt=""></p>
-<p><strong>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）主轴的开始位置叫做main start,结束的位置叫做main end</strong><br><strong>项目在主轴方向的宽度和高度就是是主轴的尺寸。main size</strong><br><strong>项目在交叉轴方向的宽度或高度就是项目的交叉轴长度。corss size</strong></p>
-<p><img src="/images/flex-02.jpg" alt=""></p>
-<p><strong>flex-direction设置决定了主轴方向，侧轴就是主轴相对应的交叉轴</strong></p>
-<h2 id="伸缩容器的属性"><a href="#伸缩容器的属性" class="headerlink" title="伸缩容器的属性"></a>伸缩容器的属性</h2><h3 id="flex-driection"><a href="#flex-driection" class="headerlink" title="flex-driection"></a>flex-driection</h3><p><strong>    这个主要是用来创建主轴，从而定义了伸缩容器的方向</strong><br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">flex-direction:<span class="built_in">row</span> | <span class="built_in">row</span>-<span class="built_in">reverse</span> | column | column-<span class="built_in">reverse</span></div><div class="line"><span class="built_in">row</span>(默认值)：主轴为水平方向，起点在左端</div><div class="line"><span class="built_in">row</span>-<span class="built_in">reverse</span>: 主轴为水平方向，起点在右端</div><div class="line">column: 主轴为垂直方向，起点在上沿</div><div class="line">column-<span class="built_in">reverse</span>: 主轴为垂直方向，起点在下沿</div></pre></td></tr></table></figure></p>
-<p><img src="/images/flex-01.png" alt=""></p>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p><strong>这个主要用来定义伸缩容器里是单行还是多行显示,交叉轴的方向决定了新行堆放的方向</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">flex-<span class="keyword">wrap</span>: nowrap | <span class="keyword">wrap</span> | <span class="keyword">wrap</span>-reverse</div><div class="line">nowrap: （默认）不换行</div><div class="line"><span class="keyword">wrap</span>: 换行，第一行在上方</div><div class="line"><span class="keyword">wrap</span>-reverse: 换行，第一行在下方</div></pre></td></tr></table></figure></p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>采用Flex布局的元素，称为Flex容器，简称“容器”，它的所有子元素自动成为容器成员，称为flex项目，简称“项目”</strong><br><strong>常规布局是基于块和内联流方向，而flex布局是基于flex-flow流</strong></p>
+<p><img src="/images/flex-03.jpg" alt=""></p>
+<p><strong>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）主轴的开始位置叫做main start,结束的位置叫做main end</strong><br><strong>项目在主轴方向的宽度和高度就是是主轴的尺寸。main size</strong><br><strong>项目在交叉轴方向的宽度或高度就是项目的交叉轴长度。corss size</strong><br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/02/17/flex布局/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -737,7 +709,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-09T21:25:38+08:00" content="2015-11-09">
               2015-11-09
             </time>
@@ -749,7 +721,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
@@ -792,13 +764,12 @@
 <p>一句话：inline-block 后的元素就是一个格式化为行内元素的块容器( Block container )</p>
 <h2 id="ie6-7真得不支持display-inline-block吗？"><a href="#ie6-7真得不支持display-inline-block吗？" class="headerlink" title="ie6,7真得不支持display:inline-block吗？"></a>ie6,7真得不支持display:inline-block吗？</h2><p>ie6中inline元素和block元素的表现：</p>
 <ul>
-<li>1）inline元素display:inline-block<br><img src="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png" /></li>
+<li>1）inline元素display:inline-block</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a-inline</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。<br>
+<p><img src="http://img04.taobaocdn.com/tps/i4/T1E_DDXihhXXa9b4f4-458-85.png" /></p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a-inline</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br><p>ie6中inline元素只要触发了haslayout期表现就类似于inline-block,这里设置display:inline-block;或者zoom:1;等其他属性值可以触发haslayout,表现出来是一样的。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/09/inline-block/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -861,7 +832,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-03T11:47:01+08:00" content="2015-11-03">
               2015-11-03
             </time>
@@ -873,7 +844,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
@@ -921,7 +892,7 @@
 <p> 禁用的文本框应用了一个不同的样式<br> <span style="color:red">IE6-8不支持”:checked”,”:enabled”,”:disabled”这三种选择器。</span></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/03/css选择器—伪类选择器/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -984,7 +955,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-02T19:02:22+08:00" content="2015-11-02">
               2015-11-02
             </time>
@@ -996,7 +967,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
@@ -1039,7 +1010,7 @@
 <p>选择.main下面所有带class的p元素<br>选择.main下面同时具有class，title两个属性的p元素</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/02/css选择器—属性选择器/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -1102,7 +1073,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-02T13:56:58+08:00" content="2015-11-02">
               2015-11-02
             </time>
@@ -1114,7 +1085,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
@@ -1156,7 +1127,7 @@
 <h2 id="2-元素选择器（E）"><a href="#2-元素选择器（E）" class="headerlink" title="2, 元素选择器（E）"></a>2, 元素选择器（E）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">15px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/02/css选择器—基本选择器/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -1218,16 +1189,16 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/a.jpg"
                alt="xiaoshuang.meng" />
           <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
-          <p class="site-description motion-element" itemprop="description">页面重构人员，日常前端记录</p>
+          <p class="site-description motion-element" itemprop="description">页面重构日常记录</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -1235,7 +1206,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">分类</span>
               
             </div>
           
@@ -1281,11 +1252,11 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
