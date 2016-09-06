@@ -625,6 +625,20 @@ pre .keyword,
 pre .javascript .function {
   color: #8959a8;
 }
+.paragraph {
+  margin-bottom: -20px;
+}
+.title-3,
+.title-2 {
+  margin: 0;
+}
+.tip-title {
+  margin-bottom: 15px;
+  color: #f88203;
+}
+.list {
+  margin: -20px 0;
+}
 .full-image.full-image.full-image {
   border: none;
   max-width: 100%;
@@ -1548,7 +1562,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0960ff;
+  background: #7da6cb;
 }
 .links-of-blogroll {
   font-size: 13px;
