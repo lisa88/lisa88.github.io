@@ -111,7 +111,7 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"right","display":"post"},
+    sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -122,8 +122,8 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
 </script>
 
   <title> sass基础用法二 | 在这里 </title>
+  
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -142,7 +142,7 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
     
   
 
-  <div class="container one-collumn sidebar-position-right page-post-detail ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -155,7 +155,7 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">无奈我和你，写不出结局，放遗憾的美丽停在这里</p>
+  <p class="site-subtitle">放遗憾的美丽停在这里</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -271,9 +271,8 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
           
             
           
-
           
-
+          
           
           
 
@@ -422,7 +421,7 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -430,7 +429,7 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -477,14 +476,16 @@ mixin是sass中最强大的特性之一，mixin可以将一部分样式抽出，
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
   <span class="author" itemprop="copyrightHolder">xiaoshuang.meng</span>
+  <span id="busuanzi_container_site_pv" style="margin-left:8px;">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
 </div>
 
 <div class="powered-by">
