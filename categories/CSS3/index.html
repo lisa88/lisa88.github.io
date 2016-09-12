@@ -84,15 +84,15 @@
 
 
 
-<meta name="description" content="页面重构日常记录">
+<meta name="description" content="页面重构日常记录，转载请注明出处">
 <meta property="og:type" content="website">
 <meta property="og:title" content="在这里">
 <meta property="og:url" content="http://xiaoshuang.com/categories/CSS3/index.html">
 <meta property="og:site_name" content="在这里">
-<meta property="og:description" content="页面重构日常记录">
+<meta property="og:description" content="页面重构日常记录，转载请注明出处">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在这里">
-<meta name="twitter:description" content="页面重构日常记录">
+<meta name="twitter:description" content="页面重构日常记录，转载请注明出处">
 
 
 
@@ -245,7 +245,24 @@
           
 
 
-          
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
 
         </div>
         
@@ -272,7 +289,7 @@
                src="/images/a.jpg"
                alt="xiaoshuang.meng" />
           <p class="site-author-name" itemprop="name">xiaoshuang.meng</p>
-          <p class="site-description motion-element" itemprop="description">页面重构日常记录</p>
+          <p class="site-description motion-element" itemprop="description">页面重构日常记录，转载请注明出处</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -417,9 +434,28 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaoshuang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 
